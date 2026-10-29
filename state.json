@@ -1,0 +1,8 @@
+{
+  "failure": {
+    "kind": "blocked",
+    "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 200, 910175 байт",
+    "since": "2026-10-29T18:51+02:00"
+  },
+  "keepalive": "2026-10"
+}
