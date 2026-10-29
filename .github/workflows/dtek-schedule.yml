@@ -1,0 +1,64 @@
+name: DTEK schedule
+
+on:
+  schedule:
+    # кожні 30 хв, не рівно на :00 — у цей час GitHub найбільше запізнюється.
+    # Приватний репозиторій: ~1440 хв/міс із 2000 безкоштовних.
+    - cron: "7,37 * * * *"
+  workflow_dispatch: # кнопка "Run workflow" для ручної перевірки
+
+permissions:
+  contents: write # щоб зберігати стан у гілку data
+
+concurrency:
+  group: dtek-schedule
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Prepare data branch
+        run: |
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch --depth=1 origin data
+            git worktree add --detach data FETCH_HEAD
+          else
+            echo "Гілки data ще немає — створюю"
+            git worktree add --detach data
+            git -C data checkout -q --orphan data-new
+            git -C data rm -rfq .
+          fi
+
+      - name: Check schedule
+        env:
+          DTEK_GROUP: ${{ vars.DTEK_GROUP }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DATA_DIR: data
+        run: python check_schedule.py
+
+      - name: Save data branch
+        if: always()
+        working-directory: data
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Без змін"
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898299+github-actions[bot]@users.noreply.github.com" \
+              commit -qm "schedule: $(TZ=Europe/Kyiv date '+%d.%m %H:%M')"
+          git push -q origin HEAD:refs/heads/data
