@@ -43,5 +43,6 @@
   },
   "dtek_update": "28.10.2026 23:12",
   "group": "GPV6.2",
-  "slot_minutes": 60
+  "slot_minutes": 60,
+  "target": "home"
 }
