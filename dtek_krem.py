@@ -72,10 +72,13 @@ class DtekKrem:
 
     async def warm_up(self) -> None:
         r = await self._s.get(PAGE)
-        if r.status_code in (403, 429) or any(m in r.text for m in _WAF_MARKERS):
-            raise DtekBlocked(f"WAF на {PAGE}: HTTP {r.status_code}, {len(r.text)} байт")
         m = _CSRF_RE.search(r.text)
-        self._csrf = m.group(1) if m else ""
+        if m:  # справжня сторінка (Incapsula вставляє свій скрипт і в неї — це нормально)
+            self._csrf = m.group(1)
+            return
+        if r.status_code in (403, 429) or any(x in r.text for x in _WAF_MARKERS):
+            raise DtekBlocked(f"WAF на {PAGE}: HTTP {r.status_code}, {len(r.text)} байт")
+        self._csrf = ""  # сторінка без токена — пробуємо AJAX без нього
 
     async def _post(self, data: dict[str, str]) -> dict:
         if self._csrf is None:
@@ -87,14 +90,16 @@ class DtekKrem:
         if self._csrf:
             headers["X-CSRF-Token"] = self._csrf
         r = await self._s.post(AJAX, data=data, headers=headers)
-        if r.status_code in (400, 403, 429) or any(m in r.text[:3000] for m in _WAF_MARKERS):
-            raise DtekBlocked(f"WAF на {AJAX}: HTTP {r.status_code}")
-        if r.status_code >= 400:
-            raise DtekError(f"HTTP {r.status_code}")
         try:
             payload = r.json()
-        except ValueError as e:
-            raise DtekError(f"не JSON: {r.text[:200]!r}") from e
+        except ValueError:
+            payload = None
+        if payload is None:  # не JSON: або челендж WAF, або інша помилка сайту
+            if r.status_code in (400, 403, 429) or any(x in r.text for x in _WAF_MARKERS):
+                raise DtekBlocked(f"WAF на {AJAX}: HTTP {r.status_code}, {len(r.text)} байт")
+            raise DtekError(f"HTTP {r.status_code}, не JSON: {r.text[:200]!r}")
+        if r.status_code >= 400:
+            raise DtekError(f"HTTP {r.status_code}: {str(payload)[:200]}")
         if not isinstance(payload, dict) or payload.get("result") is False:
             raise DtekError(f"result=false або не об'єкт: {str(payload)[:200]}")
         return payload
