@@ -1,13 +1,19 @@
-"""Перевірка графіка ДТЕК КРЕМ для однієї черги. Запускається з GitHub Actions.
+"""Перевірка графіків ДТЕК для кількох адрес. Запускається з GitHub Actions.
 
 Змінні середовища:
-  DTEK_GROUP          черга, напр. GPV3.1 (якщо порожньо — виведе список доступних черг)
   TELEGRAM_BOT_TOKEN  токен бота від @BotFather (якщо порожньо — повідомлення лише в лог)
-  TELEGRAM_CHAT_ID    куди слати
+  TELEGRAM_CHAT_ID    чат за замовчуванням, якщо в targets.json немає "chats"
+  ADMIN_CHAT_ID       (необов'язково) куди слати технічні попередження; інакше — у перший чат
+  TARGETS_JSON        (необов'язково) налаштування; інакше читається файл targets.json,
+                      а якщо і його немає — одна адреса з DTEK_GROUP (Київська область)
   DATA_DIR            тека зі станом і schedule.json (за замовчуванням data)
 
-Повідомлення в Telegram надходить лише тоді, коли змінився графік на якийсь день
-(або з'явився графік на завтра), а також один раз при блокуванні та при відновленні.
+targets.json: {"chats": [...], "admin_chat": "...", "targets": [...]} або просто [...].
+"chats" — особисті чати людей з ботом та/або групи; кожна адреса може мати власні "chats".
+
+Для кожної адреси бот:
+  * пише повідомлення, коли графік змінився або з'явився графік на завтра;
+  * тримає одне закріплене повідомлення «актуальний графік» і тихо оновлює його.
 """
 from __future__ import annotations
 
@@ -16,11 +22,12 @@ import hashlib
 import json
 import os
 import sys
+import urllib.error
 import urllib.request
 from datetime import date, datetime
 from pathlib import Path
 
-from dtek_krem import KYIV, DtekBlocked, DtekError, DtekKrem, group_schedule
+from dtek_krem import KYIV, SITES, DtekBlocked, DtekClient, DtekError, group_schedule, house_entry
 
 # Кожен слот ділиться на дві половини: (перша, друга)
 HALVES = {
@@ -38,6 +45,48 @@ DATA_DIR = Path(os.environ.get("DATA_DIR", "data"))
 STATE_FILE = DATA_DIR / "state.json"
 SCHEDULE_FILE = DATA_DIR / "schedule.json"
 MANUAL_RUN = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+_ENV_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+CHATS: list[str] = [_ENV_CHAT] if _ENV_CHAT else []
+ADMIN_CHAT = os.environ.get("ADMIN_CHAT_ID", "").strip() or _ENV_CHAT
+
+
+def _chat_list(value) -> list[str]:
+    items = value if isinstance(value, list) else [value]
+    return [str(x).strip() for x in items if str(x or "").strip()]
+
+
+# ── налаштування адрес ───────────────────────────────────────────────────────
+
+def load_targets() -> list[dict]:
+    global CHATS, ADMIN_CHAT
+    raw = os.environ.get("TARGETS_JSON", "").strip()
+    if not raw and Path("targets.json").exists():
+        raw = Path("targets.json").read_text(encoding="utf-8")
+    if raw:
+        cfg = json.loads(raw)
+        if isinstance(cfg, dict):
+            CHATS = _chat_list(cfg.get("chats") or cfg.get("chat")) or CHATS
+            ADMIN_CHAT = str(cfg.get("admin_chat") or os.environ.get("ADMIN_CHAT_ID") or "").strip() \
+                or (CHATS[0] if CHATS else "")
+            targets = cfg.get("targets") or []
+        else:
+            targets = cfg
+    else:  # стара схема: одна черга з DTEK_GROUP
+        targets = [{"id": "home", "name": "Дім", "site": "krem", "group": os.environ.get("DTEK_GROUP", "").strip()}]
+
+    seen = set()
+    for t in targets:
+        t.setdefault("site", "krem")
+        t.setdefault("name", t.get("id", "?"))
+        if not t.get("id") or t["id"] in seen:
+            raise SystemExit(f"У targets кожна адреса має мати унікальний id: {t}")
+        if t["site"] not in SITES:
+            raise SystemExit(f"{t['id']}: site має бути одним із {sorted(SITES)}")
+        if not t.get("group") and not (t.get("street") and t.get("house")):
+            raise SystemExit(f"{t['id']}: вкажи або group, або street + house (і city, якщо не Київ)")
+        t["chats"] = _chat_list(t.get("chats")) or list(CHATS)
+        seen.add(t["id"])
+    return targets
 
 
 # ── розбір графіка ───────────────────────────────────────────────────────────
@@ -63,29 +112,104 @@ def _hhmm(minutes: int) -> str:
     return f"{minutes // 60:02d}:{minutes % 60:02d}"
 
 
-def day_hash(slots: dict[str, str]) -> str:
-    return hashlib.sha256(json.dumps(slots, sort_keys=True).encode()).hexdigest()[:16]
+def short_group(g: str) -> str:
+    return g.replace("GPV", "")
 
 
-def day_text(d: date, slots: dict[str, str], changed: bool) -> str:
-    title = f"{WEEKDAYS[d.weekday()]} {d:%d.%m}" + ("  ✏️ змінено" if changed else "")
-    lines = [title]
-    ivs = intervals(slots)
-    if not any(iv["type"] == "off" for iv in ivs):
-        lines.append("✅ відключень не заплановано")
-    for iv in ivs:
-        icon = "🔴" if iv["type"] == "off" else "🟡 можливо"
-        lines.append(f"{icon} {iv['from']}–{iv['to']}")
+def day_hash(groups_slots: dict[str, dict]) -> str:
+    # для однієї черги — той самий хеш, що й у попередній версії (без зайвих повідомлень після оновлення)
+    body = next(iter(groups_slots.values())) if len(groups_slots) == 1 else groups_slots
+    return hashlib.sha256(json.dumps(body, sort_keys=True).encode()).hexdigest()[:16]
+
+
+def day_lines(d: date, groups_slots: dict[str, dict], changed: bool = False) -> str:
+    lines = [f"{WEEKDAYS[d.weekday()]} {d:%d.%m}" + ("  ✏️ змінено" if changed else "")]
+    for g, slots in groups_slots.items():
+        if len(groups_slots) > 1:
+            lines.append(f"Черга {short_group(g)}:")
+        ivs = intervals(slots)
+        if not any(iv["type"] == "off" for iv in ivs):
+            lines.append("✅ відключень не заплановано")
+        for iv in ivs:
+            icon = "🔴" if iv["type"] == "off" else "🟡 можливо"
+            lines.append(f"{icon} {iv['from']}–{iv['to']}")
     return "\n".join(lines)
 
 
-# ── стан, Telegram ───────────────────────────────────────────────────────────
+def groups_label(groups: list[str]) -> str:
+    return ("черга " if len(groups) == 1 else "черги ") + ", ".join(short_group(g) for g in groups)
+
+
+# ── Telegram ─────────────────────────────────────────────────────────────────
+
+def tg(method: str, **params) -> dict | None:
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    if not token or not params.get("chat_id"):
+        return None
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{token}/{method}",
+        data=json.dumps(params).encode(),
+        headers={"Content-Type": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return json.loads(r.read()).get("result")
+    except urllib.error.HTTPError as e:
+        desc = json.loads(e.read() or b"{}").get("description", str(e))
+        if "message is not modified" in desc:
+            return {"not_modified": True}
+        print(f"::warning::Telegram {method}: {desc}")
+        return None
+
+
+def notify(text: str, chat: str, silent: bool = False) -> int | None:
+    print(f"──── повідомлення → {chat or 'лише лог'} ────\n{text}\n──────────────────────")
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write("```\n" + text + "\n```\n")
+    res = tg("sendMessage", chat_id=chat, text=text, disable_web_page_preview=True, disable_notification=silent)
+    return res.get("message_id") if isinstance(res, dict) else None
+
+
+def update_pinned(tstate: dict, text: str, chats: list[str]) -> None:
+    """У кожному чаті одне закріплене повідомлення на адресу: редагуємо, а якщо не вийшло — створюємо нове."""
+    h = hashlib.sha256(text.encode()).hexdigest()[:16]
+    pins = tstate.setdefault("pins", {})
+    tstate.pop("pin_id", None), tstate.pop("pin_hash", None)  # формат попередньої версії
+    if not chats:
+        print(f"(закріплене без Telegram)\n{text}")
+    for chat in chats:
+        pin = pins.get(chat) or {}
+        if pin.get("hash") == h:
+            continue
+        mid = pin.get("id")
+        ok = mid and tg("editMessageText", chat_id=chat, message_id=mid, text=text, disable_web_page_preview=True)
+        if not ok:
+            # у новий чат — зі звуком, щоб людина помітила; перестворення — тихо
+            mid = notify(text, chat, silent=bool(pin))
+            if mid:
+                tg("pinChatMessage", chat_id=chat, message_id=mid, disable_notification=True)
+        if mid:
+            pins[chat] = {"id": mid, "hash": h}
+    for chat in [c for c in pins if c not in chats]:  # чат прибрали з налаштувань
+        del pins[chat]
+
+
+# ── стан ─────────────────────────────────────────────────────────────────────
 
 def load_state() -> dict:
     try:
-        return json.loads(STATE_FILE.read_text(encoding="utf-8"))
+        state = json.loads(STATE_FILE.read_text(encoding="utf-8"))
     except (FileNotFoundError, ValueError):
-        return {}
+        state = {}
+    if "days" in state:  # міграція зі старої версії (одна черга)
+        state.setdefault("targets", {})["home"] = {"days": state.pop("days"), "groups": [state.pop("group", "")]}
+        if "failure" in state:
+            state.setdefault("failures", {})["krem"] = state.pop("failure")
+    state.setdefault("targets", {})
+    state.setdefault("failures", {})
+    return state
 
 
 def save_json(path: Path, obj: dict) -> None:
@@ -93,104 +217,152 @@ def save_json(path: Path, obj: dict) -> None:
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def notify(text: str) -> None:
-    print("──── повідомлення ────\n" + text + "\n──────────────────────")
-    summary = os.environ.get("GITHUB_STEP_SUMMARY")
-    if summary:
-        with open(summary, "a", encoding="utf-8") as f:
-            f.write("```\n" + text + "\n```\n")
-    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
-    if not token or not chat:
-        print("TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID не задані — у Telegram не відправляю")
+def site_failure(state: dict, site: str, kind: str, message: str, now: datetime) -> None:
+    print(f"::warning::{site} {kind}: {message}")
+    prev = state["failures"].get(site)
+    if prev and prev.get("kind") == kind:
         return
-    body = json.dumps({"chat_id": chat, "text": text, "disable_web_page_preview": True}).encode()
-    req = urllib.request.Request(
-        f"https://api.telegram.org/bot{token}/sendMessage",
-        data=body,
-        headers={"Content-Type": "application/json"},
-    )
-    with urllib.request.urlopen(req, timeout=20) as r:
-        if r.status != 200:
-            print(f"::warning::Telegram відповів HTTP {r.status}")
+    state["failures"][site] = {"kind": kind, "since": now.isoformat(timespec="minutes"), "message": message}
+    what = {
+        "blocked": "сайт ДТЕК заблокував запит (Incapsula)",
+        "address": "не вдалося знайти адресу або її графік",
+    }.get(kind, "не вдалося отримати графік")
+    notify(f"⚠️ dtek-{site}: {what}.\n{message}\nПовідомлю, коли знову запрацює.", chat=ADMIN_CHAT)
 
 
-def available_groups(raw: dict) -> list[str]:
-    names = set()
-    for groups in ((raw.get("fact") or {}).get("data") or {}).values():
-        if isinstance(groups, dict):
-            names.update(groups)
-    names.update(((raw.get("preset") or {}).get("sch_names") or {}).keys())
-    return sorted(names)
+def site_ok(state: dict, site: str) -> None:
+    if state["failures"].pop(site, None):
+        notify(f"✅ dtek-{site}: графік знову отримую.", chat=ADMIN_CHAT)
 
 
 # ── основна логіка ───────────────────────────────────────────────────────────
 
-def record_failure(state: dict, kind: str, message: str, now: datetime) -> int:
-    print(f"::warning::{kind}: {message}")
-    prev = state.get("failure")
-    if not prev or prev.get("kind") != kind:
-        state["failure"] = {"kind": kind, "since": now.isoformat(timespec="minutes"), "message": message}
-        what = "сайт ДТЕК заблокував запит (Incapsula)" if kind == "blocked" else "не вдалося отримати графік"
-        notify(f"⚠️ Графік ДТЕК: {what}.\n{message}\nПовідомлю, коли знову запрацює.")
-    save_json(STATE_FILE, state)
-    return 1 if MANUAL_RUN else 0  # ручний запуск — червоний, за розкладом — без листів про помилку
+async def fetch_target(t: dict, client: DtekClient, region_cache: dict) -> tuple[list[str], dict]:
+    """Повертає (черги адреси, відповідь з графіком)."""
+    if t.get("group"):
+        if t["site"] not in region_cache:
+            region_cache[t["site"]] = await client.region_schedule()
+        return [t["group"]], region_cache[t["site"]]
+
+    city = await client.resolve_city(t.get("city"))
+    raw = await client.home_num(city, t["street"])
+    entry = house_entry(raw, str(t["house"]))
+    groups = [str(g) for g in (entry.get("sub_type_reason") or [])]
+    print(f"[{t['id']}] {city}, {t['street']}, {t['house']} → {groups or 'черг немає'}")
+    print(f"[{t['id']}] запис будинку: {json.dumps(entry, ensure_ascii=False)[:500]}")
+    if not (raw.get("fact") or {}).get("data"):  # графік не прийшов разом з адресою — беремо загальний
+        if t["site"] not in region_cache:
+            region_cache[t["site"]] = await client.region_schedule()
+        raw = region_cache[t["site"]]
+    return groups, raw
+
+
+def process(t: dict, groups: list[str], raw: dict, state: dict, now: datetime) -> dict | None:
+    """Порівнює графік із попереднім, шле повідомлення. Повертає графік першої черги для ESP."""
+    fact_groups = set()
+    for g in ((raw.get("fact") or {}).get("data") or {}).values():
+        if isinstance(g, dict):
+            fact_groups.update(g)
+    missing = [g for g in groups if g not in fact_groups]
+    if not groups or missing:
+        raise DtekError(
+            f"{t['name']}: у графіку немає черг {missing or groups or '—'}; "
+            f"є: {', '.join(sorted(fact_groups)[:40]) or '—'}"
+        )
+
+    today = now.date()
+    scheds = {g: group_schedule(raw, g) for g in groups}
+    update = next(iter(scheds.values()))["update"]
+    all_days = sorted({d for s in scheds.values() for d in s["days"] if d >= today})
+    days = {d: {g: scheds[g]["days"][d] for g in groups if d in scheds[g]["days"]} for d in all_days}
+
+    tstate = state["targets"].setdefault(t["id"], {})
+    first_time = "days" not in tstate
+    old = tstate.get("days", {})
+    new = {d.isoformat(): day_hash(gs) for d, gs in days.items()}
+    changed = [d for d in days if old.get(d.isoformat()) != new[d.isoformat()]]
+    old_groups = [g for g in tstate.get("groups", []) if g]
+    print(f"[{t['id']}] {groups_label(groups)}: днів {len(days)}, змінено: {[str(d) for d in changed] or 'нічого'}")
+
+    header = f"{t['name']} · {groups_label(groups)}"
+    group_changed = bool(old_groups) and old_groups != groups
+    if (changed or group_changed) and not first_time:
+        parts = [f"📅 {header}: графік оновлено (ДТЕК: {update or '—'})"]
+        if group_changed:
+            parts[0] += f"\n⚠️ Черга змінилась: {', '.join(map(short_group, old_groups))} → {', '.join(map(short_group, groups))}"
+        parts += [day_lines(d, gs, d in changed) for d, gs in days.items()]
+        for chat in t["chats"]:
+            notify("\n\n".join(parts), chat)
+
+    body = [day_lines(d, gs) for d, gs in days.items()] or ["Графік ще не опубліковано"]
+    pinned = "\n\n".join([f"📌 {header} — актуальний графік"] + body + [f"Дані ДТЕК: {update or '—'}"])
+    update_pinned(tstate, pinned, t["chats"])
+
+    tstate["days"] = new
+    tstate["groups"] = groups
+    g0 = groups[0]
+    slot_count = max((len(s) for s in scheds[g0]["days"].values()), default=0)
+    return {
+        "target": t["id"],
+        "group": g0,
+        "dtek_update": update,
+        "slot_minutes": 1440 // slot_count if slot_count else None,
+        "days": {
+            d.isoformat(): {"slots": list(gs[g0].values()), "intervals": intervals(gs[g0])}
+            for d, gs in days.items() if g0 in gs
+        },
+    }
 
 
 async def run() -> int:
-    group = os.environ.get("DTEK_GROUP", "").strip()
+    targets = load_targets()
     state = load_state()
     now = datetime.now(KYIV)
-    state["keepalive"] = now.strftime("%Y-%m")  # щомісячний коміт, щоб GitHub не вимкнув розклад
+    state["keepalive"] = now.strftime("%Y-%m")
+    failed = False
+    esp_target = next((t["id"] for t in targets if t.get("esp")), targets[0]["id"])
 
-    try:
-        async with DtekKrem() as client:
-            raw = await client.region_schedule()
-    except DtekBlocked as e:
-        return record_failure(state, "blocked", str(e), now)
-    except (DtekError, OSError) as e:
-        return record_failure(state, "error", f"{type(e).__name__}: {e}", now)
+    for site in sorted({t["site"] for t in targets}):
+        site_targets = [t for t in targets if t["site"] == site]
+        region_cache: dict = {}
+        try:
+            async with DtekClient(site) as client:
+                results = []
+                for t in site_targets:
+                    try:
+                        groups, raw = await fetch_target(t, client, region_cache)
+                    except DtekBlocked:
+                        raise
+                    except DtekError as e:
+                        site_failure(state, site, "address", f"{t['name']}: {e}", now)
+                        failed = True
+                        continue
+                    results.append((t, groups, raw))
+        except DtekBlocked as e:
+            site_failure(state, site, "blocked", str(e), now)
+            failed = True
+            continue
+        except (DtekError, OSError) as e:
+            site_failure(state, site, "error", f"{type(e).__name__}: {e}", now)
+            failed = True
+            continue
 
-    groups = available_groups(raw)
-    print(f"OK: графік отримано, черг у відповіді: {len(groups)}, ДТЕК оновив: {(raw.get('fact') or {}).get('update')}")
+        site_has_errors = len(results) < len(site_targets)
+        for t, groups, raw in results:
+            try:
+                esp = process(t, groups, raw, state, now)
+            except DtekError as e:
+                site_failure(state, site, "address", str(e), now)
+                failed = site_has_errors = True
+                continue
+            if t["id"] == esp_target and esp:
+                save_json(SCHEDULE_FILE, esp)
+        if not site_has_errors:
+            site_ok(state, site)
 
-    if not group or group not in groups:
-        msg = "DTEK_GROUP не задано" if not group else f"черги {group!r} немає у відповіді"
-        print(f"::warning::{msg}. Доступні черги: {', '.join(groups) or '—'}")
-        save_json(STATE_FILE, state)
-        return 1 if group else 0
-
-    if state.pop("failure", None):
-        notify("✅ Графік ДТЕК знову отримую.")
-
-    sched = group_schedule(raw, group)
-    today = now.date()
-    days = {d: s for d, s in sched["days"].items() if d >= today}
-    old_hashes = state.get("days", {})
-    new_hashes = {d.isoformat(): day_hash(s) for d, s in days.items()}
-    changed = [d for d in days if old_hashes.get(d.isoformat()) != new_hashes[d.isoformat()]]
-    print(f"Черга {group}: днів у графіку {len(days)}, змінено: {[str(d) for d in changed] or 'нічого'}")
-
-    if changed:
-        name = group.replace("GPV", "")
-        parts = [f"📅 Графік черги {name} оновлено (ДТЕК: {sched['update'] or '—'})"]
-        parts += [day_text(d, s, d in changed) for d, s in sorted(days.items())]
-        notify("\n\n".join(parts))
-
-    state["days"] = new_hashes
-    state["group"] = group
+    state["targets"] = {k: v for k, v in state["targets"].items() if k in {t["id"] for t in targets}}
     save_json(STATE_FILE, state)
-
-    slot_count = max((len(s) for s in days.values()), default=0)
-    save_json(SCHEDULE_FILE, {
-        "group": group,
-        "dtek_update": sched["update"],
-        "slot_minutes": 1440 // slot_count if slot_count else None,
-        "days": {
-            d.isoformat(): {"slots": list(s.values()), "intervals": intervals(s)}
-            for d, s in sorted(days.items())
-        },
-    })
-    return 0
+    return 1 if (failed and MANUAL_RUN) else 0
 
 
 if __name__ == "__main__":

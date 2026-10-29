@@ -1,0 +1,20 @@
+{
+  "chats": ["-1004425079130"],
+  "admin_chat": "758746979",
+  "targets": [
+    {
+      "id": "home",
+      "name": "🏡 Дім",
+      "site": "krem",
+      "group": "GPV6.2",
+      "esp": true
+    },
+    {
+      "id": "parents",
+      "name": "👵 Батьки",
+      "site": "kem",
+      "street": "вул. Ніколаєва Архітектора",
+      "house": "9"
+    }
+  ]
+}

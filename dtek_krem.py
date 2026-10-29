@@ -1,10 +1,10 @@
-"""Мінімальний клієнт графіків ДТЕК Київські регіональні електромережі.
+"""Мінімальний клієнт графіків ДТЕК: Київські регіональні (krem) і Київські (kem) електромережі.
 
 Протокол взято з dtek-blackout-client 0.1.12 (MIT) і спрощено:
   * GET  /ua/shutdowns  -> cookies Incapsula + CSRF-токен (meta csrf-token)
   * POST /ua/ajax        -> JSON (form-urlencoded, формат jQuery serializeArray)
       method=getStreets                 -> {"streets": {місто: [вулиці]}}
-      method=getHomeNum + city, street  -> {"data": {будинок: {"sub_type_reason": ["GPV3.1"]}}}
+      method=getHomeNum + city, street  -> {"data": {будинок: {"sub_type_reason": ["GPV3.1"]}}, ...}
       method=checkDisconUpdate          -> {"preset": ..., "fact": ...} графік УСІХ черг
 
 Incapsula пропускає curl_cffi з імітацією TLS-відбитка Chrome.
@@ -20,9 +20,10 @@ from zoneinfo import ZoneInfo
 
 from curl_cffi.requests import AsyncSession
 
-BASE = "https://www.dtek-krem.com.ua"
-PAGE = f"{BASE}/ua/shutdowns"
-AJAX = f"{BASE}/ua/ajax"
+SITES = {
+    "krem": "https://www.dtek-krem.com.ua",  # Київська область
+    "kem": "https://www.dtek-kem.com.ua",    # місто Київ
+}
 KYIV = ZoneInfo("Europe/Kyiv")
 
 _CSRF_RE = re.compile(r'<meta[^>]+name="csrf-token"[^>]+content="([^"]+)"')
@@ -49,18 +50,26 @@ def _form(method: str, fields: list[tuple[str, str]] = ()) -> dict[str, str]:
     return form
 
 
-class DtekKrem:
-    def __init__(self, cookies: dict[str, str] | None = None):
+class DtekClient:
+    def __init__(self, site: str = "krem", cookies: dict[str, str] | None = None):
+        if site not in SITES:
+            raise ValueError(f"невідомий сайт {site!r}, є: {sorted(SITES)}")
+        self.site = site
+        self.base = SITES[site]
+        self.page = f"{self.base}/ua/shutdowns"
+        self.ajax = f"{self.base}/ua/ajax"
         self._s = AsyncSession(
             impersonate="chrome",
             timeout=20,
-            headers={"Accept-Language": "uk,en;q=0.8", "Referer": PAGE, "Origin": BASE},
+            headers={"Accept-Language": "uk,en;q=0.8", "Referer": self.page, "Origin": self.base},
         )
+        domain = "." + self.base.split("//www.")[-1]
         for k, v in (cookies or {}).items():
-            self._s.cookies.set(k, v, domain=".dtek-krem.com.ua")
+            self._s.cookies.set(k, v, domain=domain)
         self._csrf: str | None = None
+        self._streets: dict | None = None
 
-    async def __aenter__(self) -> DtekKrem:
+    async def __aenter__(self) -> DtekClient:
         return self
 
     async def __aexit__(self, *exc) -> None:
@@ -71,13 +80,13 @@ class DtekKrem:
         return dict(self._s.cookies.items())
 
     async def warm_up(self) -> None:
-        r = await self._s.get(PAGE)
+        r = await self._s.get(self.page)
         m = _CSRF_RE.search(r.text)
         if m:  # справжня сторінка (Incapsula вставляє свій скрипт і в неї — це нормально)
             self._csrf = m.group(1)
             return
         if r.status_code in (403, 429) or any(x in r.text for x in _WAF_MARKERS):
-            raise DtekBlocked(f"WAF на {PAGE}: HTTP {r.status_code}, {len(r.text)} байт")
+            raise DtekBlocked(f"WAF на {self.page}: HTTP {r.status_code}, {len(r.text)} байт")
         self._csrf = ""  # сторінка без токена — пробуємо AJAX без нього
 
     async def _post(self, data: dict[str, str]) -> dict:
@@ -89,14 +98,14 @@ class DtekKrem:
         }
         if self._csrf:
             headers["X-CSRF-Token"] = self._csrf
-        r = await self._s.post(AJAX, data=data, headers=headers)
+        r = await self._s.post(self.ajax, data=data, headers=headers)
         try:
             payload = r.json()
         except ValueError:
             payload = None
         if payload is None:  # не JSON: або челендж WAF, або інша помилка сайту
             if r.status_code in (400, 403, 429) or any(x in r.text for x in _WAF_MARKERS):
-                raise DtekBlocked(f"WAF на {AJAX}: HTTP {r.status_code}, {len(r.text)} байт")
+                raise DtekBlocked(f"WAF на {self.ajax}: HTTP {r.status_code}, {len(r.text)} байт")
             raise DtekError(f"HTTP {r.status_code}, не JSON: {r.text[:200]!r}")
         if r.status_code >= 400:
             raise DtekError(f"HTTP {r.status_code}: {str(payload)[:200]}")
@@ -104,23 +113,71 @@ class DtekKrem:
             raise DtekError(f"result=false або не об'єкт: {str(payload)[:200]}")
         return payload
 
+    async def all_streets(self) -> dict[str, list[str]]:
+        """{місто: [вулиці]} для всього сайту (кешується на час сесії)."""
+        if self._streets is None:
+            raw = (await self._post({"method": "getStreets"})).get("streets") or {}
+            self._streets = raw if isinstance(raw, dict) else {}
+        return self._streets
+
     async def streets(self, city: str) -> list[str]:
-        raw = (await self._post({"method": "getStreets"})).get("streets", {})
-        return list(raw.get(city, []))
+        return list((await self.all_streets()).get(city, []))
+
+    async def resolve_city(self, city: str | None) -> str:
+        """Назва міста точно як на сайті. Для Києва місто можна не вказувати."""
+        cities = list(await self.all_streets())
+        if city and city in cities:
+            return city
+        if city:
+            near = [c for c in cities if city.lower().replace("м. ", "") in c.lower()]
+            if len(near) == 1:
+                return near[0]
+            raise DtekError(f"місто {city!r} не знайдено; схожі: {near[:15] or cities[:15]}")
+        if len(cities) == 1:
+            return cities[0]
+        kyiv = [c for c in cities if c.lower() in ("м. київ", "київ")]
+        if kyiv:
+            return kyiv[0]
+        raise DtekError(f"вкажи місто; на сайті є: {cities[:20]}")
+
+    async def home_num(self, city: str, street: str) -> dict:
+        """Сира відповідь getHomeNum: будинки вулиці (+ часто графік fact/preset)."""
+        return await self._post(_form("getHomeNum", [("city", city), ("street", street)]))
 
     async def find_groups(self, city: str, street: str, house: str) -> list[str]:
-        """Черги для адреси, напр. ['GPV3.1']. Викликається один раз при налаштуванні."""
-        raw = await self._post(_form("getHomeNum", [("city", city), ("street", street)]))
-        data = raw.get("data", {})
-        if isinstance(data, list):  # інший формат, який теж трапляється
-            data = {str(h.get("num") or h.get("name") or h.get("id")): h for h in data}
-        if house not in data:
-            raise DtekError(f"будинок {house!r} не знайдено; є: {sorted(data)[:30]}")
-        return list(data[house].get("sub_type_reason") or [])
+        """Черги для адреси, напр. ['GPV3.1']."""
+        return house_entry(await self.home_num(city, street), house).get("sub_type_reason") or []
 
     async def region_schedule(self) -> dict:
-        """Графік усіх черг області. Саме це опитуємо періодично — адреса не потрібна."""
+        """Графік усіх черг сайту. Адреса не потрібна."""
         return await self._post({"method": "checkDisconUpdate", "update": "01.01.2000 00:00"})
+
+
+class DtekKrem(DtekClient):
+    """Зворотна сумісність: клієнт Київської області."""
+
+    def __init__(self, cookies: dict[str, str] | None = None):
+        super().__init__("krem", cookies)
+
+
+def houses(raw: dict) -> dict[str, dict]:
+    data = raw.get("data") or {}
+    if isinstance(data, list):  # інший формат, який теж трапляється
+        data = {str(h.get("num") or h.get("name") or h.get("id")): h for h in data if isinstance(h, dict)}
+    return data if isinstance(data, dict) else {}
+
+
+def house_entry(raw: dict, house: str) -> dict:
+    data = houses(raw)
+    if house in data:
+        return data[house]
+    norm = {k.replace(" ", "").lower(): k for k in data}
+    key = norm.get(house.replace(" ", "").lower())
+    if key:
+        return data[key]
+    similar = [k for k in data if k[:1] == house[:1]] or list(data)
+    street = "вулиця не знайдена або порожня" if not data else f"схожі номери: {sorted(similar)[:30]}"
+    raise DtekError(f"будинок {house!r} не знайдено; {street}")
 
 
 def group_schedule(raw: dict, group: str) -> dict:
@@ -159,15 +216,33 @@ if __name__ == "__main__":
     import asyncio
     import sys
 
-    async def main() -> None:
-        async with DtekKrem() as c:
-            if len(sys.argv) == 4:
-                print("Черги:", await c.find_groups(*sys.argv[1:4]))
-                return
-            group = sys.argv[1] if len(sys.argv) > 1 else "GPV1.1"
-            sched = group_schedule(await c.region_schedule(), group)
-            print(f"{group}, оновлено: {sched['update']}, hash {schedule_hash(sched)}")
-            for d, slots in sched["days"].items():
-                print(d, render_bar(slots))
+    USAGE = """Використання:
+  python dtek_krem.py [krem|kem] cities                       — міста на сайті
+  python dtek_krem.py [krem|kem] streets "м. Київ"            — вулиці міста
+  python dtek_krem.py [krem|kem] "м. Київ" "вул. Хрещатик" 1  — черги для адреси
+  python dtek_krem.py [krem|kem] GPV3.1                       — графік черги"""
 
-    asyncio.run(main())
+    async def main(args: list[str]) -> None:
+        site = args.pop(0) if args and args[0] in SITES else "krem"
+        async with DtekClient(site) as c:
+            if args == ["cities"]:
+                print("\n".join(await c.all_streets()))
+            elif len(args) == 2 and args[0] == "streets":
+                print("\n".join(await c.streets(await c.resolve_city(args[1]))))
+            elif len(args) == 3:
+                city = await c.resolve_city(args[0])
+                raw = await c.home_num(city, args[1])
+                entry = house_entry(raw, args[2])
+                print("Місто:", city)
+                print("Запис будинку:", json.dumps(entry, ensure_ascii=False))
+                print("Черги:", entry.get("sub_type_reason"))
+            elif len(args) == 1:
+                group = args[0]
+                sched = group_schedule(await c.region_schedule(), group)
+                print(f"{group}, оновлено: {sched['update']}, hash {schedule_hash(sched)}")
+                for d, slots in sched["days"].items():
+                    print(d, render_bar(slots))
+            else:
+                print(USAGE)
+
+    asyncio.run(main(sys.argv[1:]))
