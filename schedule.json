@@ -1,0 +1,47 @@
+{
+  "days": {
+    "2026-10-29": {
+      "intervals": [
+        {
+          "from": "09:00",
+          "to": "11:00",
+          "type": "off"
+        },
+        {
+          "from": "17:30",
+          "to": "21:30",
+          "type": "off"
+        }
+      ],
+      "slots": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "no",
+        "no",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "second",
+        "no",
+        "no",
+        "no",
+        "first",
+        "yes",
+        "yes"
+      ]
+    }
+  },
+  "dtek_update": "28.10.2026 23:12",
+  "group": "GPV6.2",
+  "slot_minutes": 60
+}

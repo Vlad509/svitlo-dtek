@@ -1,8 +1,7 @@
 {
-  "failure": {
-    "kind": "blocked",
-    "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 200, 910175 байт",
-    "since": "2026-10-29T18:51+02:00"
+  "days": {
+    "2026-10-29": "e608a520a673a5cc"
   },
+  "group": "GPV6.2",
   "keepalive": "2026-10"
 }
