@@ -68,6 +68,7 @@ class DtekClient:
             self._s.cookies.set(k, v, domain=domain)
         self._csrf: str | None = None
         self._streets: dict | None = None
+        self.streets_debug = ""
 
     async def __aenter__(self) -> DtekClient:
         return self
@@ -114,10 +115,25 @@ class DtekClient:
         return payload
 
     async def all_streets(self) -> dict[str, list[str]]:
-        """{місто: [вулиці]} для всього сайту (кешується на час сесії)."""
+        """{місто: [вулиці]} для всього сайту (кешується на час сесії).
+
+        На dtek-krem вулиці згруповані за містами. На dtek-kem (Київ) може прийти просто
+        список вулиць — тоді місто записуємо як "" (запит без міста).
+        """
         if self._streets is None:
-            raw = (await self._post({"method": "getStreets"})).get("streets") or {}
+            resp = await self._post({"method": "getStreets"})
+            raw = resp.get("streets") or resp.get("data") or {}
+            self.streets_debug = (
+                f"getStreets: ключі відповіді {list(resp)[:10]}, "
+                f"тип streets={type(resp.get('streets')).__name__}, тип data={type(resp.get('data')).__name__}"
+            )
+            if isinstance(raw, list):
+                raw = {"": [str(x) for x in raw]}
+            elif isinstance(raw, dict) and raw and all(isinstance(v, str) for v in raw.values()):
+                raw = {"": list(raw.values())}  # {id: назва вулиці}
             self._streets = raw if isinstance(raw, dict) else {}
+            n = sum(len(v) for v in self._streets.values() if isinstance(v, list))
+            self.streets_debug += f"; міст {len(self._streets)}, вулиць {n}"
         return self._streets
 
     async def streets(self, city: str) -> list[str]:
@@ -126,6 +142,8 @@ class DtekClient:
     async def resolve_city(self, city: str | None) -> str:
         """Назва міста точно як на сайті. Для Києва місто можна не вказувати."""
         cities = list(await self.all_streets())
+        if cities == [""]:
+            return ""  # сайт без поділу на міста
         if city and city in cities:
             return city
         if city:
@@ -138,11 +156,30 @@ class DtekClient:
         kyiv = [c for c in cities if c.lower() in ("м. київ", "київ")]
         if kyiv:
             return kyiv[0]
+        if not cities:
+            return ""  # список вулиць не прийшов — спробуємо запит без міста
         raise DtekError(f"вкажи місто; на сайті є: {cities[:20]}")
+
+    def similar_streets(self, city: str, street: str) -> list[str]:
+        """Вулиці з тим самим головним словом — підказка, якщо назву написано не так, як на сайті."""
+        words = [w for w in street.lower().replace(".", " ").split() if len(w) > 3]
+        pool = (self._streets or {}).get(city, [])
+        return [s for s in pool if any(w in s.lower() for w in words)][:15]
 
     async def home_num(self, city: str, street: str) -> dict:
         """Сира відповідь getHomeNum: будинки вулиці (+ часто графік fact/preset)."""
-        return await self._post(_form("getHomeNum", [("city", city), ("street", street)]))
+        fields = [("city", city), ("street", street)] if city else [("street", street)]
+        return await self._post(_form("getHomeNum", fields))
+
+    async def home_num_any(self, city: str, street: str) -> tuple[dict, str]:
+        """getHomeNum з кількома варіантами міста (для Києва формат запиту може відрізнятися)."""
+        variants = [city] + ([v for v in ("м. Київ", "") if v != city] if self.site == "kem" else [])
+        raw: dict = {}
+        for v in variants:
+            raw = await self.home_num(v, street)
+            if houses(raw):
+                return raw, v
+        return raw, city
 
     async def find_groups(self, city: str, street: str, house: str) -> list[str]:
         """Черги для адреси, напр. ['GPV3.1']."""

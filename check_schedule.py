@@ -27,7 +27,7 @@ import urllib.request
 from datetime import date, datetime
 from pathlib import Path
 
-from dtek_krem import KYIV, SITES, DtekBlocked, DtekClient, DtekError, group_schedule, house_entry
+from dtek_krem import KYIV, SITES, DtekBlocked, DtekClient, DtekError, group_schedule, house_entry, houses
 
 # Кожен слот ділиться на дві половини: (перша, друга)
 HALVES = {
@@ -245,10 +245,16 @@ async def fetch_target(t: dict, client: DtekClient, region_cache: dict) -> tuple
         return [t["group"]], region_cache[t["site"]]
 
     city = await client.resolve_city(t.get("city"))
-    raw = await client.home_num(city, t["street"])
-    entry = house_entry(raw, str(t["house"]))
+    print(f"[{t['id']}] {client.streets_debug}")
+    raw, city = await client.home_num_any(city, t["street"])
+    print(f"[{t['id']}] getHomeNum: ключі {list(raw)[:12]}, будинків {len(houses(raw))}, місто в запиті {city!r}")
+    try:
+        entry = house_entry(raw, str(t["house"]))
+    except DtekError as e:
+        hint = client.similar_streets(city, t["street"])
+        raise DtekError(f"{e}" + (f"; схожі вулиці: {hint}" if hint else "")) from e
     groups = [str(g) for g in (entry.get("sub_type_reason") or [])]
-    print(f"[{t['id']}] {city}, {t['street']}, {t['house']} → {groups or 'черг немає'}")
+    print(f"[{t['id']}] {city or '(без міста)'}, {t['street']}, {t['house']} → {groups or 'черг немає'}")
     print(f"[{t['id']}] запис будинку: {json.dumps(entry, ensure_ascii=False)[:500]}")
     if not (raw.get("fact") or {}).get("data"):  # графік не прийшов разом з адресою — беремо загальний
         if t["site"] not in region_cache:
