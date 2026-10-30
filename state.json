@@ -1,16 +1,24 @@
 {
-  "failures": {
+  "cookies": {
     "kem": {
-      "kind": "blocked",
-      "message": "WAF на https://www.dtek-kem.com.ua/ua/shutdowns: HTTP 200, 909 байт",
-      "since": "2026-10-30T16:07+02:00"
+      "_csrf-dtek-kem": "aae2a2423da6c81d750c6f3ea1d6f048b258ccdfacbb18db8881379fa1597bcfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22atOWbiCgin3aZvGXY1JOGvYcfNBpItKV%22%3B%7D",
+      "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
+      "dtek-kem": "d161joa47gog9u51tv3ujtnebi",
+      "incap_ses_1021_2224657": "BBQcBa7rxVwqrK/zJ1IrDrmr5GoAAAAAMsf6ZMusYKP5+aGBPpJhUQ==",
+      "incap_wrt_373": "uqvkagAAAABRgh05GgAI9QIQ3/Dwnb8DGObZktcGIAIouNeS1wYwAeiMZaFhwjSPPbNIwrsIzcc=",
+      "visid_incap_2224657": "73cPlujbTEGJ9XYavkyAfbir5GoAAAAAQUIPAAAAAABRTUjQntyEonHN7MR8O19U"
     },
     "krem": {
-      "kind": "blocked",
-      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 403, 865 байт",
-      "since": "2026-10-30T16:10+02:00"
+      "Domain": "dtek-krem.com.ua",
+      "_csrf-dtek-krem": "1d6cf341a67ae534f9a5ac5b0adcbe79e133dccfe813c5787e482aaadb4b7077a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22P0W1-oNZdcVnMchiXWuEkA0-38z-Eq2e%22%3B%7D",
+      "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
+      "dtek-krem": "orjvfbejns4uih4a18648lkq1t",
+      "incap_ses_1021_2398465": "2mWnHRn5FTE706/zJ1IrDryr5GoAAAAAfFZk7bJPpsnOhVx45tdxPQ==",
+      "incap_wrt_378": "vavkagAAAAB3+7tvGgAI+gIQ3O3YivgCGOnZktcGIAIou9eS1wYwA6teb5LvT4Xqm1NVMAlRDCc=",
+      "visid_incap_2398465": "c0H1lSwgSuCQhD1LkF4A0Lur5GoAAAAAQUIPAAAAAACMvRniCTHwxRpK3achiaKo"
     }
   },
+  "failures": {},
   "keepalive": "2026-10",
   "targets": {
     "home": {
@@ -29,14 +37,14 @@
     },
     "parents": {
       "days": {
-        "2026-10-30": "f06b04fb01b4801c"
+        "2026-10-30": "8cbf8289e9dbb3f2"
       },
       "groups": [
         "GPV11.1"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "482bb31ff24b800d",
+          "hash": "ab9b3f857d3ac9a1",
           "id": 5
         }
       }
