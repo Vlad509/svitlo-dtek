@@ -1,11 +1,16 @@
 name: DTEK schedule
 
 on:
+  # Основний запуск — cron-job.org кожні 30 хв через API (див. README).
+  # Розклад GitHub лише запасний: він часто запізнюється на години.
+  # Хвилини (приватний репозиторій): 48/добу + 8/добу ≈ 1750 із 2000 на місяць.
   schedule:
-    # кожні 30 хв, не рівно на :00 — у цей час GitHub найбільше запізнюється.
-    # Приватний репозиторій: ~1440 хв/міс із 2000 безкоштовних.
-    - cron: "7,37 * * * *"
-  workflow_dispatch: # кнопка "Run workflow" для ручної перевірки
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Хто запускає (cron — зовнішній розклад, помилки не роблять запуск червоним)"
+        default: manual
 
 permissions:
   contents: write # щоб зберігати стан у гілку data
@@ -47,6 +52,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DATA_DIR: data
+          RUN_SOURCE: ${{ inputs.source }}
         run: python check_schedule.py
 
       - name: Save data branch
