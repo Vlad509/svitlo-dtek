@@ -44,7 +44,11 @@ WEEKDAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"]
 DATA_DIR = Path(os.environ.get("DATA_DIR", "data"))
 STATE_FILE = DATA_DIR / "state.json"
 SCHEDULE_FILE = DATA_DIR / "schedule.json"
-MANUAL_RUN = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+# ручний запуск кнопкою — помилка робить запуск червоним; запуск від cron-job.org — ні
+MANUAL_RUN = (
+    os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    and os.environ.get("RUN_SOURCE", "manual") != "cron"
+)
 _ENV_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 CHATS: list[str] = [_ENV_CHAT] if _ENV_CHAT else []
 ADMIN_CHAT = os.environ.get("ADMIN_CHAT_ID", "").strip() or _ENV_CHAT
