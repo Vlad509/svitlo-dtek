@@ -1,5 +1,11 @@
 {
-  "failures": {},
+  "failures": {
+    "kem": {
+      "kind": "blocked",
+      "message": "WAF на https://www.dtek-kem.com.ua/ua/shutdowns: HTTP 200, 909 байт",
+      "since": "2026-10-30T16:07+02:00"
+    }
+  },
   "keepalive": "2026-10",
   "targets": {
     "home": {
