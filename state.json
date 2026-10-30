@@ -4,6 +4,11 @@
       "kind": "blocked",
       "message": "WAF на https://www.dtek-kem.com.ua/ua/shutdowns: HTTP 200, 909 байт",
       "since": "2026-10-30T16:07+02:00"
+    },
+    "krem": {
+      "kind": "blocked",
+      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 403, 865 байт",
+      "since": "2026-10-30T16:10+02:00"
     }
   },
   "keepalive": "2026-10",
