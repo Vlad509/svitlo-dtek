@@ -5,11 +5,12 @@
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "8thfh217vmumdht8j5lp1f154h",
       "incap_ses_2103_2224657": "nBxWTbuoYBfve8UjwlsvHdPA5GoAAAAAOnzCUfWBvzCUjzS3w6NDAw==",
+      "incap_ses_327_2224657": "xTOlVeo6dlc6oSbEjL2JBPPj5GoAAAAA8HlY8KZLVQxWC6TG3qtgHA==",
       "incap_ses_341_2224657": "9yo/Bhja1W7jobebHHq7BOzV5GoAAAAAMTdGbAkR0M+x5EMMNmkYsQ==",
       "incap_ses_79_2224657": "DJ80dhwisH6gQNX5eKoYAd7O5GoAAAAAYQghaUxOW0rIcHqd6JD18A==",
       "incap_ses_959_2224657": "N6L2Z0QNunTxQX53eQ1PDe/c5GoAAAAAnRWKZwh4MNIGr9dJRxgPKQ==",
       "incap_ses_970_2224657": "SOLuRahuOgrvBvkq9iF2Dc255GoAAAAAcgjQkVM1ue02ZakufkNJlw==",
-      "incap_wrt_373": "8NzkagAAAABrF3gBGgAI9QIQ18j5qL8DGJy8k9cGIAIo7rmT1wYwAdh7G2Mv1AAjB8GfUxqTx1M=",
+      "incap_wrt_373": "9OPkagAAAADFdLo8GgAI9QIQt9nDqr8DGKDKk9cGIAIo8seT1wYwAX7qU2GkB8n4Zh3kMQE33RY=",
       "visid_incap_2224657": "MUcBcy+eTV+GV/FXNukK4s255GoAAAAAQUIPAAAAAACGcBZ23E+21Z4Wv2UG0Uc3"
     },
     "krem": {
@@ -20,7 +21,7 @@
       "incap_ses_341_2398465": "ZhjjQlG9BiuYrrebHHq7BO/V5GoAAAAADTenXnHe6JXDYwVVP2oXJQ==",
       "incap_ses_79_2398465": "emctea+DT3hHVNX5eKoYAeHO5GoAAAAADKB7/+Y0H4qR0l0MSJc/Xg==",
       "incap_ses_959_2398465": "TVdHbMCfSVEMVn53eQ1PDfHc5GoAAAAAY20dc5gu5R9R9IhsFbTUaA==",
-      "incap_wrt_378": "89zkagAAAABEgVVkGgAI+gIQwNrEk/gCGJ+8k9cGIAIo8bmT1wYwA1pkkAFyDV6NDjaZnNX+2KU=",
+      "incap_wrt_378": "+ePkagAAAAAfIYURGgAI+gIQ5ubmlPgCGKXKk9cGIAIo9seT1wYwA/VIyqIrdEwZ8U6z1OZnKAA=",
       "visid_incap_2398465": "WsL4oW4QTOC698dto8EVF+HH5GoAAAAAQUIPAAAAAAB5yMpZwmGwqk5qvRmx6VIX"
     }
   },
@@ -36,21 +37,22 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "02c373fb38d04e5e",
+          "hash": "62d6bd1818f3d2b3",
           "id": 3
         }
       }
     },
     "parents": {
       "days": {
-        "2026-10-30": "8cbf8289e9dbb3f2"
+        "2026-10-30": "8cbf8289e9dbb3f2",
+        "2026-10-31": "49aeb24a36bf78b4"
       },
       "groups": [
         "GPV11.1"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "ab9b3f857d3ac9a1",
+          "hash": "53dba7535618d87c",
           "id": 5
         }
       }
