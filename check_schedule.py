@@ -213,6 +213,10 @@ def load_state() -> dict:
             state.setdefault("failures", {})["krem"] = state.pop("failure")
     state.setdefault("targets", {})
     state.setdefault("failures", {})
+    state.setdefault("cookies", {})
+    for f in state["failures"].values():  # формат попередньої версії: попередження вже надсилалось
+        if "count" not in f:
+            f.update(count=1, alerted_kinds=[f.get("kind")])
     return state
 
 
@@ -221,21 +225,34 @@ def save_json(path: Path, obj: dict) -> None:
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+# Скільки невдалих запусків поспіль, перш ніж попередити. Блокування Incapsula буває епізодичним:
+# GitHub щоразу дає сервер з іншою IP-адресою, і зазвичай наступний запуск проходить.
+ALERT_AFTER = {"blocked": 3, "error": 3, "address": 1}
+WHAT = {
+    "blocked": "сайт ДТЕК блокує запити (Incapsula)",
+    "address": "не вдалося знайти адресу або її графік",
+    "error": "не вдалося отримати графік",
+}
+
+
 def site_failure(state: dict, site: str, kind: str, message: str, now: datetime) -> None:
     print(f"::warning::{site} {kind}: {message}")
-    prev = state["failures"].get(site)
-    if prev and prev.get("kind") == kind:
-        return
-    state["failures"][site] = {"kind": kind, "since": now.isoformat(timespec="minutes"), "message": message}
-    what = {
-        "blocked": "сайт ДТЕК заблокував запит (Incapsula)",
-        "address": "не вдалося знайти адресу або її графік",
-    }.get(kind, "не вдалося отримати графік")
-    notify(f"⚠️ dtek-{site}: {what}.\n{message}\nПовідомлю, коли знову запрацює.", chat=ADMIN_CHAT)
+    f = state["failures"].setdefault(site, {"since": now.isoformat(timespec="minutes"), "count": 0})
+    if f.get("kind") != kind:
+        f["count"] = 0
+    f.update(kind=kind, message=message, count=f["count"] + 1)
+    alerted = f.setdefault("alerted_kinds", [])
+    if kind not in alerted and f["count"] >= ALERT_AFTER.get(kind, 3):
+        alerted.append(kind)
+        since = f["since"][11:16]
+        tail = f" (з {since}, {f['count']} перевірки поспіль)" if f["count"] > 1 else ""
+        notify(f"⚠️ dtek-{site}: {WHAT.get(kind, kind)}{tail}.\n{message}\nПовідомлю, коли знову запрацює.",
+               chat=ADMIN_CHAT)
 
 
 def site_ok(state: dict, site: str) -> None:
-    if state["failures"].pop(site, None):
+    f = state["failures"].pop(site, None)
+    if f and f.get("alerted_kinds"):
         notify(f"✅ dtek-{site}: графік знову отримую.", chat=ADMIN_CHAT)
 
 
@@ -265,6 +282,41 @@ async def fetch_target(t: dict, client: DtekClient, region_cache: dict) -> tuple
             region_cache[t["site"]] = await client.region_schedule()
         raw = region_cache[t["site"]]
     return groups, raw
+
+
+# Спроби в межах одного запуску: збережені cookies + відбиток Chrome, далі інші відбитки браузера.
+ATTEMPTS = [("chrome", True), ("safari", False), ("firefox", False)]
+RETRY_DELAY = float(os.environ.get("DTEK_RETRY_DELAY", "8"))
+
+
+async def fetch_site(site: str, site_targets: list[dict], state: dict) -> tuple[list, list]:
+    """Отримує дані всіх адрес сайту. Повертає (успішні, помилки адрес); DtekBlocked — якщо всі спроби невдалі."""
+    last: DtekBlocked | None = None
+    for i, (browser, use_saved) in enumerate(ATTEMPTS):
+        if i:
+            await asyncio.sleep(RETRY_DELAY)
+        cookies = state["cookies"].get(site) if use_saved else None
+        try:
+            async with DtekClient(site, cookies=cookies, impersonate=browser) as client:
+                results, errors, region_cache = [], [], {}
+                for t in site_targets:
+                    try:
+                        groups, raw = await fetch_target(t, client, region_cache)
+                        results.append((t, groups, raw))
+                    except DtekBlocked:
+                        raise
+                    except DtekError as e:
+                        errors.append((t, e))
+                state["cookies"][site] = client.cookies()
+                print(f"{site}: дані отримано зі спроби {i + 1} ({browser}{', збережені cookies' if cookies else ''})")
+                return results, errors
+        except DtekBlocked as e:
+            last = e
+            print(f"{site}: спроба {i + 1} ({browser}) — блокування: {e}")
+            if use_saved:
+                state["cookies"].pop(site, None)
+    assert last is not None
+    raise last
 
 
 def process(t: dict, groups: list[str], raw: dict, state: dict, now: datetime) -> dict | None:
@@ -334,20 +386,11 @@ async def run() -> int:
 
     for site in sorted({t["site"] for t in targets}):
         site_targets = [t for t in targets if t["site"] == site]
-        region_cache: dict = {}
         try:
-            async with DtekClient(site) as client:
-                results = []
-                for t in site_targets:
-                    try:
-                        groups, raw = await fetch_target(t, client, region_cache)
-                    except DtekBlocked:
-                        raise
-                    except DtekError as e:
-                        site_failure(state, site, "address", f"{t['name']}: {e}", now)
-                        failed = True
-                        continue
-                    results.append((t, groups, raw))
+            results, errors = await fetch_site(site, site_targets, state)
+            for t, e in errors:
+                site_failure(state, site, "address", f"{t['name']}: {e}", now)
+                failed = True
         except DtekBlocked as e:
             site_failure(state, site, "blocked", str(e), now)
             failed = True

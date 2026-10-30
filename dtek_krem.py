@@ -51,7 +51,7 @@ def _form(method: str, fields: list[tuple[str, str]] = ()) -> dict[str, str]:
 
 
 class DtekClient:
-    def __init__(self, site: str = "krem", cookies: dict[str, str] | None = None):
+    def __init__(self, site: str = "krem", cookies: dict[str, str] | None = None, impersonate: str = "chrome"):
         if site not in SITES:
             raise ValueError(f"невідомий сайт {site!r}, є: {sorted(SITES)}")
         self.site = site
@@ -59,7 +59,7 @@ class DtekClient:
         self.page = f"{self.base}/ua/shutdowns"
         self.ajax = f"{self.base}/ua/ajax"
         self._s = AsyncSession(
-            impersonate="chrome",
+            impersonate=impersonate,  # "chrome" | "safari" | "firefox" — відбиток браузера для Incapsula
             timeout=20,
             headers={"Accept-Language": "uk,en;q=0.8", "Referer": self.page, "Origin": self.base},
         )

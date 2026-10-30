@@ -19,7 +19,8 @@
 | `targets.json` | адреси й чати (приватний репозиторій — тому тут можна) |
 | `dtek_krem.py` | клієнт сайтів ДТЕК (curl_cffi з відбитком Chrome) |
 | `check_schedule.py` | перевірка змін, повідомлення, закріплені повідомлення |
-| `.github/workflows/dtek-schedule.yml` | розклад запуску |
+| `.github/workflows/dtek-schedule.yml` | сам запуск (+ запасний розклад GitHub) |
+| `cloudflare-worker.js` | запускає workflow кожні 30 хв (код для Cloudflare) |
 
 Стан і графік зберігаються в гілці `data`: `state.json` і `schedule.json`
 (графік адреси з `"esp": true` — для ESP32).
@@ -71,11 +72,33 @@ Actions → DTEK schedule → Run workflow. У лозі кроку **Check sched
 - прийшло попередження «не вдалося знайти адресу» → у ньому підказки (схожі номери будинків
   або «вулиця не знайдена»), виправ `targets.json`.
 
+## Запуск кожні 30 хв через Cloudflare Worker
+
+Розклад GitHub Actions часто запізнюється на години, тому основний запуск робить
+Cloudflare Worker із Cron Trigger (код — `cloudflare-worker.js`).
+
+1. **Токен GitHub:** Settings → Developer settings → Personal access tokens → Fine-grained tokens →
+   Generate new token. Repository access: *Only select repositories* → `svitlo-dtek`.
+   Permissions → Repository permissions → **Actions: Read and write**. Найдовший термін дії.
+2. **Cloudflare** → Workers & Pages → Create → Worker (Hello World) → назва `svitlo-cron` → Deploy →
+   Edit code → встав `cloudflare-worker.js` → Deploy.
+3. Settings → **Variables and Secrets**:
+   - `GITHUB_REPO` (Text) = `<КОРИСТУВАЧ>/svitlo-dtek`
+   - `GITHUB_TOKEN` (Secret) = токен з кроку 1
+   - `TELEGRAM_BOT_TOKEN` (Secret) і `ADMIN_CHAT_ID` (Text) — необов'язково, для попереджень
+4. Settings → **Trigger events** → Add → Cron Triggers → `7,37 * * * *`.
+5. Відкрий адресу Worker (`https://svitlo-cron.<акаунт>.workers.dev`) — має бути «✅ Токен працює».
+   Після найближчих :07/:37 у GitHub Actions з'явиться запуск.
+
 ## Примітки
 
-- Розклад GitHub може запізнюватися на 5–30 хв: для графіка це некритично.
-- Не частіше ніж кожні 30 хв: кожен запуск рахується як ціла хвилина, і при 15 хв
-  безкоштовний ліміт приватного репозиторію закінчиться.
+- Incapsula іноді блокує окремі сервери GitHub (кожен запуск — інша IP-адреса). Тому скрипт
+  робить до 3 спроб з різними відбитками браузера, зберігає cookies між запусками й попереджає
+  лише після 3 невдалих запусків поспіль (~1,5 год). Помилку адреси повідомляє одразу.
+
+- Розклад GitHub у workflow лишився запасним (раз на 3 год), якщо Worker не спрацює.
+- Не частіше ніж кожні 30 хв: кожен запуск рахується як ціла хвилина;
+  48 + 8 запусків на добу ≈ 1750 хв із 2000 безкоштовних на місяць.
 - Якщо закріплене повідомлення видалили, бот створить нове при наступній зміні графіка.
 - Без `targets.json` працює стара схема: одна черга з `DTEK_GROUP` у чат `TELEGRAM_CHAT_ID`.
 - Ключ `"chat": "..."` (одним рядком) теж підтримується, як і раніше.
