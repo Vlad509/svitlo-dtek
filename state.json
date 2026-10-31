@@ -4,8 +4,9 @@
       "_csrf-dtek-kem": "f8a443f7a56356ac8c9c3ecf4d2530d86269b0845728fa9860042ae8abaadb76a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%224YpeOP2UUWOIVzuLE7Fmf_a8pGukONUq%22%3B%7D",
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "3q0pl21l5h8nomtl0j5tl5bmq4",
+      "incap_ses_1568_2224657": "e0x4dmWleliKtZ14gKjCFV8g5moAAAAAMih03ugJqAUoiaIRtD4nVQ==",
       "incap_ses_396_2224657": "+S0GfdW0UHjc9W3fQeB+BWkZ5moAAAAASH+31ro1l//KPBeKryP6iQ==",
-      "incap_wrt_373": "axnmagAAAACcndAdGgAI9QIQpYjy8L8DGJe1mNcGIAIo6LKY1wYwAeA2tm7uNO98jLIfYHBe7ko=",
+      "incap_wrt_373": "YSDmagAAAAB4860pGgAI9QIQldS68r8DGI3DmNcGIAIo3sCY1wYwAVEnaRn7Fgi8JmM20Xy0ysI=",
       "visid_incap_2224657": "E5FuXD1oR+WBh3TnMCO6nGgZ5moAAAAAQUIPAAAAAACi0uctGxM2QRGL3DwAk7eA"
     },
     "krem": {
@@ -17,6 +18,7 @@
       "incap_ses_1010_2398465": "heVFIEWIF1qTfrHcvT0EDinv5WoAAAAAqblZcASyQs8Yu7n07SaoVQ==",
       "incap_ses_1012_2398465": "R9pyTAQxuxuLqax6vVgLDtmo5WoAAAAADHHnMOEw9YNlJOpBCKn4bQ==",
       "incap_ses_1024_2398465": "b0TLcuAArFTJhxs9rfo1DiDo5WoAAAAAfNrFJFIa0jZZ0Jb9Q+rGYA==",
+      "incap_ses_1568_2398465": "bgceBxIW9Cwkup14gKjCFWIg5moAAAAAQqkWmh7fvR3o1jkWYr9P4A==",
       "incap_ses_187_2398465": "sblCblr+hWQJJ4oa1FuYAkAE5moAAAAAi09olYX2w8B687L47C0w/w==",
       "incap_ses_188_2398465": "Q8pyUpHwAA6xMrsQVembAgDM5WoAAAAARemgERcgJ5zxPMSK/JPRfw==",
       "incap_ses_198_2398465": "S/hhSfo+PD4twR44XHC/Aum25WoAAAAAcS7ZKQTt8xw6w6M/zP45qg==",
@@ -33,7 +35,7 @@
       "incap_ses_92_2398465": "yWZcDvWc93kUR4UdiNlGAfG95WoAAAAAvi2RAidu39JpG8OSUNbyWA==",
       "incap_ses_961_2398465": "y3reUrXy8xxfmAHLdihWDQ/a5WoAAAAAcG2AJZ8tQVHuE3vItT5eng==",
       "incap_ses_967_2398465": "mftKHZblHkvU3AH8cHlrDVES5moAAAAAd5676g6NJInhH1so9CdeIQ==",
-      "incap_wrt_378": "bRnmagAAAAAYrUslGgAI+gIQ6e2DzfgCGJm1mNcGIAIo67KY1wYwA1y7ltMaeTCBSYiqxWdr87M=",
+      "incap_wrt_378": "ZCDmagAAAAAxuzECGgAI+gIQzsOkzvgCGI/DmNcGIAIo4cCY1wYwA9ZJ9Rsip+ognEXXgJaEjUA=",
       "visid_incap_2398465": "qglWGV1XRceTXz54ms4hac6T5WoAAAAAQUIPAAAAAACBlQ+IrhJtXizisfRaImMh"
     }
   },
@@ -42,14 +44,15 @@
   "targets": {
     "home": {
       "days": {
-        "2026-10-31": "d366fd61da0929a4"
+        "2026-10-31": "d366fd61da0929a4",
+        "2026-11-01": "85806caa177245d5"
       },
       "groups": [
         "GPV6.2"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "e353ba7ae47190db",
+          "hash": "c4adba4bf7b3800f",
           "id": 3
         }
       }
