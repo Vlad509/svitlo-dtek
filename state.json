@@ -5,8 +5,9 @@
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "mk2ulurqo09is2aqk2t2po6ikp",
       "incap_ses_1010_2224657": "lKLJa2ORoRpD8GvavT0EDtKh5WoAAAAAW/fIvqfCdHIPEAfKEM0fUA==",
+      "incap_ses_1012_2224657": "flrGS2ZBBgAolKx6vVgLDtao5WoAAAAAZqN32p6MWpDWYeY/lrNv7g==",
       "incap_ses_333_2224657": "zro9ZHcaPUVlWsOXkg6fBMua5WoAAAAAsfEO9FfhCE7D74TV1AxFIA==",
-      "incap_wrt_373": "06HlagAAAADQOXpqGgAI9QIQrffr1b8DGP/FltcGIAIo0cOW1wYwARIJERFZZ4PkSptjCzf1Ets=",
+      "incap_wrt_373": "2KjlagAAAACOLKsQGgAI9QIQpaO4178DGITUltcGIAIo1dGW1wYwAQcloA0qh5AHCdwkwFJkBH0=",
       "visid_incap_2224657": "kvDyxJuNSOGZ09rRdOl0msua5WoAAAAAQUIPAAAAAACdMfA6+HtPyi9UI+Gc/Ntn"
     },
     "krem": {
@@ -15,9 +16,10 @@
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-krem": "e8v7bkj38p6higithlanq7vnig",
       "incap_ses_1010_2398465": "JoYQRJWg0F/u/WvavT0EDtSh5WoAAAAAxmLWICynC2jTjko0uZB+lQ==",
+      "incap_ses_1012_2398465": "R9pyTAQxuxuLqax6vVgLDtmo5WoAAAAADHHnMOEw9YNlJOpBCKn4bQ==",
       "incap_ses_2109_2398465": "I67TIfZAsEdzIMswF61EHc+T5WoAAAAAuuHWJjStUBOAyqbcbyWY+w==",
       "incap_ses_912_2398465": "wMGtVtXo9EcF9DoDQBOoDM2a5WoAAAAA44HutbXl4k6EiP7jHsxtKg==",
-      "incap_wrt_378": "1aHlagAAAADdxMovGgAI+gIQ/rWzt/gCGIHGltcGIAIo08OW1wYwAx2YUpAtWcfQyMbIH5s1oLo=",
+      "incap_wrt_378": "2qjlagAAAABfPykmGgAI+gIQsorXuPgCGIbUltcGIAIo2dGW1wYwAxfs4ulyGlykMcsuAsD5OxI=",
       "visid_incap_2398465": "qglWGV1XRceTXz54ms4hac6T5WoAAAAAQUIPAAAAAACBlQ+IrhJtXizisfRaImMh"
     }
   },
@@ -40,14 +42,14 @@
     },
     "parents": {
       "days": {
-        "2026-10-31": "30c94d6d6bc7f939"
+        "2026-10-31": "367200f8739372dc"
       },
       "groups": [
         "GPV11.1"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "bb5124581ecca2b7",
+          "hash": "e036e9f61025b9de",
           "id": 5
         }
       }
