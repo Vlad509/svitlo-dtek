@@ -4,13 +4,14 @@
       "_csrf-dtek-kem": "218ae14fd34b2d3580e1ac3c59c9fb56b8fc590427242aa99f83548abcd65826a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22-nQiWE_ElBmv8D8lvL6ARdoCi-zCkNpq%22%3B%7D",
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "dha0e4h3s0cq3cp7e536cdnt0f",
+      "incap_ses_100_2224657": "ARiyJbHojTaK7v0dykVjAYZi5WoAAAAAqIot5GlIL4+Qx5mrKTyjQA==",
       "incap_ses_1016_2224657": "4lO/QGfPii1uF4iptY4ZDmE75WoAAAAAch0k+H3ZD6LASMQWbicauA==",
       "incap_ses_1020_2224657": "yE+nOIMahlnm7bgbtcQnDnVU5WoAAAAA0UpSDFRNkB50DIr4yEGTrA==",
       "incap_ses_1022_2224657": "OxpTRTqid1L8Lt++tN8uDmpN5WoAAAAA4+E30Icf5v+k+OmTK4cyQQ==",
       "incap_ses_336_2224657": "fJ4TWdmgxX+qDAbm+7apBGNG5WoAAAAAFlHbd/NZVXq5x+w6bzLf0g==",
       "incap_ses_915_2224657": "lrFaLmi1vDKC4H1Dt7uyDHtb5WoAAAAAvhG408JbYUbRmmPKnQOJBQ==",
       "incap_ses_958_2224657": "Uq65QLfIhmLwhbzY+n9LDVs/5WoAAAAACl/Ach4H/FVe6GYhqopgIg==",
-      "incap_wrt_373": "fVvlagAAAACmC7ccGgAI9QIQrtnjxb8DGKm5ldcGIAIo+7aV1wYwAeNqBZ0YQgB7YZr8mmiVDaY=",
+      "incap_wrt_373": "nWLlagAAAAB6cBstGgAI9QIQ8aizx78DGMjHldcGIAIohcWV1wYwARHFlamX9LOoGlQtiRoqgaE=",
       "visid_incap_2224657": "Nk/Z9N7TSgOHtP9NeF4Z8Fs45WoAAAAAQUIPAAAAAADG8Cp0/hb9ms2sZ2kRmVId"
     },
     "krem": {
@@ -42,7 +43,15 @@
       "visid_incap_2398465": "WsL4oW4QTOC698dto8EVF+HH5GoAAAAAQUIPAAAAAAB5yMpZwmGwqk5qvRmx6VIX"
     }
   },
-  "failures": {},
+  "failures": {
+    "krem": {
+      "alerted_kinds": [],
+      "count": 1,
+      "kind": "error",
+      "message": "Timeout: Failed to perform, curl: (28) Operation timed out after 20000 milliseconds with 56010 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
+      "since": "2026-10-31T05:37+02:00"
+    }
+  },
   "keepalive": "2026-10",
   "targets": {
     "home": {
