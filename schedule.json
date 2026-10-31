@@ -1,45 +1,5 @@
 {
   "days": {
-    "2026-10-31": {
-      "intervals": [
-        {
-          "from": "11:30",
-          "to": "15:30",
-          "type": "off"
-        },
-        {
-          "from": "22:00",
-          "to": "24:00",
-          "type": "off"
-        }
-      ],
-      "slots": [
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "second",
-        "no",
-        "no",
-        "no",
-        "first",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "yes",
-        "no",
-        "no"
-      ]
-    },
     "2026-11-01": {
       "intervals": [
         {

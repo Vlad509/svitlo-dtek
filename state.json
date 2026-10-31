@@ -6,6 +6,7 @@
       "dtek-kem": "3q0pl21l5h8nomtl0j5tl5bmq4",
       "incap_ses_100_2224657": "SHcma71dUXlMAewhykVjAZVR5moAAAAAwQzgycMK5HiGJe/7/bLizg==",
       "incap_ses_1021_2224657": "WDY1JxWcUlGfF2rQKVIrDmMn5moAAAAA+MhODaWeKu4MCEpFMNM1eQ==",
+      "incap_ses_1022_2224657": "0z74KiddbVaSmpTJtN8uDq9m5moAAAAAJgsHS/Qy1UitW6KrqiP5uQ==",
       "incap_ses_1023_2224657": "zvzmJifCZCn37pLbMG0yDo1K5moAAAAAmfR+mA35PWp4eNOrI3EtCA==",
       "incap_ses_1024_2224657": "LCWHLS3gHxDQM90/rfo1Dnw85moAAAAAkVNP6kPUQIM7klZl+O6t/w==",
       "incap_ses_102_2224657": "puU1OpxTdU7NiYi4yWBqAZ5Y5moAAAAA0OuUyNL3letWQZtzWUPNLw==",
@@ -17,7 +18,7 @@
       "incap_ses_958_2224657": "VDg3dEIWlk0z4Jjc+n9LDYRD5moAAAAAI8xlPfZt38pLLU/uuqVZ9A==",
       "incap_ses_959_2224657": "HSX5d939tDaqmMR9eQ1PDVtg5moAAAAAmGsO/a5Lqf6fbJl9wQLFeQ==",
       "incap_ses_970_2224657": "XDavPbJTaEaxqUEy9iF2DaRf5moAAAAACwcGv8LAgaEVgPzvCB9Udg==",
-      "incap_wrt_373": "XWDmagAAAAAv0vBRGgAI9QIQ5Pr5gMADGInDmdcGIAIo2sCZ1wYwAWUxr4baX5oQtKwdMwRZyno=",
+      "incap_wrt_373": "sWbmagAAAAA8W7VNGgAI9QIQ0LqxgsADGN3PmdcGIAIors2Z1wYwAXAzauOZUQ9ashvrwdetjWI=",
       "visid_incap_2224657": "E5FuXD1oR+WBh3TnMCO6nGgZ5moAAAAAQUIPAAAAAACi0uctGxM2QRGL3DwAk7eA"
     },
     "krem": {
@@ -25,17 +26,17 @@
       "_csrf-dtek-krem": "38b937ba1b258239f8570ca3dd8e893cd46daf814fa35101e03ca7df304518fba%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22Z5AJS9ju1amUcKFHuoxnzpf2lOknDNlW%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-krem": "ttr1bgjuc9itc4diclp8100fj7",
+      "incap_ses_1022_2398465": "e0WmdWEGtADdwZTJtN8uDrJm5moAAAAAvpSV7MPxN7+mpz/PxccS5g==",
       "incap_ses_959_2398465": "KvUUC9kE+yB1ycR9eQ1PDWZg5moAAAAAzx37uQHb/YsUCdC1MmOPSA==",
-      "incap_wrt_378": "Z2DmagAAAACD/ioVGgAI+gIQw6/02fgCGJPDmdcGIAIo5cCZ1wYwA5mfpjzXXV2Ic3G7s1S0TMM=",
+      "incap_wrt_378": "s2bmagAAAABtMg8VGgAI+gIQxYuG2/gCGN/PmdcGIAIosc2Z1wYwA7OmfWSfE+Bk2W5nEaXlgPg=",
       "visid_incap_2398465": "W53gh3BcRBibS0hDzGb85GVg5moAAAAAQUIPAAAAAADX2sQ+9BCXa33hRmpSUWKO"
     }
   },
   "failures": {},
-  "keepalive": "2026-10",
+  "keepalive": "2026-11",
   "targets": {
     "home": {
       "days": {
-        "2026-10-31": "d366fd61da0929a4",
         "2026-11-01": "85806caa177245d5"
       },
       "groups": [
@@ -43,14 +44,13 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "c4adba4bf7b3800f",
+          "hash": "9363fa1822e861ae",
           "id": 3
         }
       }
     },
     "parents": {
       "days": {
-        "2026-10-31": "b6acf9be9bd02157",
         "2026-11-01": "f2fa909baa68fd4d"
       },
       "groups": [
@@ -58,7 +58,7 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "7961fd4718421be9",
+          "hash": "16bd506a407cd9d8",
           "id": 5
         }
       }
