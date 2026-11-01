@@ -4,9 +4,10 @@
       "_csrf-dtek-kem": "777f6e4a7e1ed974a707ee93f3ba53eb617a618ab719fa5f66a6cee90c15eb32a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%228E_YQkEikDZcLtHzjVNAcUY7Ar97hGhY%22%3B%7D",
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "0m8eub456ls9k1mbd18bvhvvli",
+      "incap_ses_1011_2224657": "2FWZVHxwX0F+0ZR2PMsHDkDG52oAAAAAOuS1bKL6Dv4RB0BgzqABAw==",
       "incap_ses_420_2224657": "XYUmURjbum81ZWDqiSTUBSWx52oAAAAAquKts0V2LGN/nJixRmR9Jg==",
       "incap_ses_961_2224657": "Wr+QNKT950FMn47ceChWDS6452oAAAAAgUT2e2GV94j+BqxwTWuHxA==",
-      "incap_wrt_373": "Nr/nagAAAADZFO5aGgAI9QIQwaW80MADGOKAn9cGIAIos/6e1wYwAd23fnyLxv9Nu9CxRVO9DcU=",
+      "incap_wrt_373": "QcbnagAAAAB23YANGgAI9QIQ1djv0cADGO2On9cGIAIov4yf1wYwAfTjZGVkSp1Osn6m++jPzF4=",
       "visid_incap_2224657": "3bHVlUIXSa+FIiuUD7l/FySx52oAAAAAQUIPAAAAAACJ7fd7hVX6BvxCN2AX+Pfe"
     },
     "krem": {
@@ -14,9 +15,10 @@
       "_csrf-dtek-krem": "7c93f73c0e48d846d3816b6b7976103b675e0589b074d4c54154e591c91bb34aa%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%227Mg-gbl8JfN8Y6ZAaTYACj-g-BOkqjWJ%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-krem": "lqjr4rk33e7mfbnif413s3vff5",
+      "incap_ses_1011_2398465": "272sEq5SOmwW3ZR2PMsHDkLG52oAAAAAlc6yGTQwwR/jWdr3QZ1irQ==",
       "incap_ses_420_2398465": "LeZwTzc5ejb4aGDqiSTUBSex52oAAAAAnhSop3VZT6ux3r8/EBlVwg==",
       "incap_ses_961_2398465": "OLdMQ6F1dSiYrY7ceChWDTG452oAAAAAowOH/DdV9E5IUi0nFecSGw==",
-      "incap_wrt_378": "Ob/nagAAAAA5FV8uGgAI+gIQuqzDmfkCGOWAn9cGIAIot/6e1wYwA0FsB5fY7gZ/qb+LiDEG/TU=",
+      "incap_wrt_378": "Q8bnagAAAADcsn9UGgAI+gIQoJHTmvkCGO+On9cGIAIowYyf1wYwA3WXOkNHokopIERPxvdFQ9w=",
       "visid_incap_2398465": "O60/7K61Rra6xkEFH4V0qCex52oAAAAAQUIPAAAAAAAL68Mho9XXpGryzfQx0vpl"
     }
   },
@@ -25,7 +27,7 @@
       "alerted_kinds": [
         "address"
       ],
-      "count": 2,
+      "count": 3,
       "kind": "address",
       "message": "👵 Батьки: у графіку немає черг ['GPV9.1']; є: —",
       "since": "2026-11-02T00:07+02:00"
