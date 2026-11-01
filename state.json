@@ -5,7 +5,8 @@
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "0m8eub456ls9k1mbd18bvhvvli",
       "incap_ses_420_2224657": "XYUmURjbum81ZWDqiSTUBSWx52oAAAAAquKts0V2LGN/nJixRmR9Jg==",
-      "incap_wrt_373": "JrHnagAAAAAHENkSGgAI9QIQ+fOmzcADGNLkntcGIAIopOKe1wYwAfIxIbzWoqvYja4Dd/npD9U=",
+      "incap_ses_961_2224657": "Wr+QNKT950FMn47ceChWDS6452oAAAAAgUT2e2GV94j+BqxwTWuHxA==",
+      "incap_wrt_373": "L7jnagAAAADtiNkSGgAI9QIQ15DyzsADGNvyntcGIAIorfCe1wYwAT03rlmgPdV+JBrMhXgN6kI=",
       "visid_incap_2224657": "3bHVlUIXSa+FIiuUD7l/FySx52oAAAAAQUIPAAAAAACJ7fd7hVX6BvxCN2AX+Pfe"
     },
     "krem": {
@@ -14,16 +15,26 @@
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-krem": "lqjr4rk33e7mfbnif413s3vff5",
       "incap_ses_420_2398465": "LeZwTzc5ejb4aGDqiSTUBSex52oAAAAAnhSop3VZT6ux3r8/EBlVwg==",
-      "incap_wrt_378": "KLHnagAAAAAVWPFTGgAI+gIQ3/n9lvkCGNTkntcGIAIop+Ke1wYwA9jtjlCxfTcq4NZwu/eiyv0=",
+      "incap_ses_961_2398465": "OLdMQ6F1dSiYrY7ceChWDTG452oAAAAAowOH/DdV9E5IUi0nFecSGw==",
+      "incap_wrt_378": "MrjnagAAAAD9dIIUGgAI+gIQgouhmPkCGN7yntcGIAIosPCe1wYwA2SEZEr3do1B6uCsnFuejVY=",
       "visid_incap_2398465": "O60/7K61Rra6xkEFH4V0qCex52oAAAAAQUIPAAAAAAAL68Mho9XXpGryzfQx0vpl"
     }
   },
-  "failures": {},
+  "failures": {
+    "kem": {
+      "alerted_kinds": [
+        "address"
+      ],
+      "count": 1,
+      "kind": "address",
+      "message": "👵 Батьки: у графіку немає черг ['GPV9.1']; є: —",
+      "since": "2026-11-02T00:07+02:00"
+    }
+  },
   "keepalive": "2026-11",
   "targets": {
     "home": {
       "days": {
-        "2026-11-01": "85806caa177245d5",
         "2026-11-02": "4cf27a8e45fc9325"
       },
       "groups": [
@@ -31,7 +42,7 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "c0dc0ba35d48024b",
+          "hash": "2766ef9c3435f329",
           "id": 3
         }
       }
