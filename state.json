@@ -6,7 +6,7 @@
       "dtek-kem": "0m8eub456ls9k1mbd18bvhvvli",
       "incap_ses_420_2224657": "XYUmURjbum81ZWDqiSTUBSWx52oAAAAAquKts0V2LGN/nJixRmR9Jg==",
       "incap_ses_961_2224657": "Wr+QNKT950FMn47ceChWDS6452oAAAAAgUT2e2GV94j+BqxwTWuHxA==",
-      "incap_wrt_373": "L7jnagAAAADtiNkSGgAI9QIQ15DyzsADGNvyntcGIAIorfCe1wYwAT03rlmgPdV+JBrMhXgN6kI=",
+      "incap_wrt_373": "Nr/nagAAAADZFO5aGgAI9QIQwaW80MADGOKAn9cGIAIos/6e1wYwAd23fnyLxv9Nu9CxRVO9DcU=",
       "visid_incap_2224657": "3bHVlUIXSa+FIiuUD7l/FySx52oAAAAAQUIPAAAAAACJ7fd7hVX6BvxCN2AX+Pfe"
     },
     "krem": {
@@ -16,7 +16,7 @@
       "dtek-krem": "lqjr4rk33e7mfbnif413s3vff5",
       "incap_ses_420_2398465": "LeZwTzc5ejb4aGDqiSTUBSex52oAAAAAnhSop3VZT6ux3r8/EBlVwg==",
       "incap_ses_961_2398465": "OLdMQ6F1dSiYrY7ceChWDTG452oAAAAAowOH/DdV9E5IUi0nFecSGw==",
-      "incap_wrt_378": "MrjnagAAAAD9dIIUGgAI+gIQgouhmPkCGN7yntcGIAIosPCe1wYwA2SEZEr3do1B6uCsnFuejVY=",
+      "incap_wrt_378": "Ob/nagAAAAA5FV8uGgAI+gIQuqzDmfkCGOWAn9cGIAIot/6e1wYwA0FsB5fY7gZ/qb+LiDEG/TU=",
       "visid_incap_2398465": "O60/7K61Rra6xkEFH4V0qCex52oAAAAAQUIPAAAAAAAL68Mho9XXpGryzfQx0vpl"
     }
   },
@@ -25,7 +25,7 @@
       "alerted_kinds": [
         "address"
       ],
-      "count": 1,
+      "count": 2,
       "kind": "address",
       "message": "👵 Батьки: у графіку немає черг ['GPV9.1']; є: —",
       "since": "2026-11-02T00:07+02:00"
