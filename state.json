@@ -1,24 +1,21 @@
 {
-  "cookies": {
+  "cookies": {},
+  "failures": {
     "kem": {
-      "_csrf-dtek-kem": "33f4a6306e1928862bf9be4b2e31eb63176f08058cda928beaf6be6fadb705a9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22MT0sJ31EgoK474QmqzgdHGqpc07QW0gy%22%3B%7D",
-      "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-kem": "el1j2in2h6sde4nauafb3srcri",
-      "incap_ses_2109_2224657": "+F3LYWRvlThxpKc1F61EHR2j52oAAAAA9m0XeYVZDnVTQMBBMqZotw==",
-      "incap_wrt_373": "HqPnagAAAADsfsdYGgAI9QIQ0PSQysADGMrIntcGIAIonMae1wYwARRHEfo8qo+Jn8VWq+TjhH0=",
-      "visid_incap_2224657": "BN4y6meLQUOXZGY0NcfWFxyj52oAAAAAQUIPAAAAAAALmqHzc1As/+R6Jbmxi+Fa"
+      "alerted_kinds": [],
+      "count": 1,
+      "kind": "blocked",
+      "message": "WAF на https://www.dtek-kem.com.ua/ua/shutdowns: HTTP 403, 858 байт",
+      "since": "2026-11-01T23:07+02:00"
     },
     "krem": {
-      "Domain": "dtek-krem.com.ua",
-      "_csrf-dtek-krem": "10f5262dcf4ad7b4d86d90dc4626dd7226b3449fcc8b44025d4fdb2d8d5b12eca%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22b_5yXfMknLeH0dn5jZGRaTuRLe-ce41-%22%3B%7D",
-      "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-krem": "99mdmd76faunrpfr5cgrsgbsfq",
-      "incap_ses_2109_2398465": "VOY3Mzs7Ozzbwqc1F61EHSij52oAAAAAqS7jFC01synFjwQNXkZQSg==",
-      "incap_wrt_378": "KaPnagAAAAAT64QYGgAI+gIQ8Z+6lPkCGNXIntcGIAIop8ae1wYwA4M/VZHCjUrRxeNPRLv+SFY=",
-      "visid_incap_2398465": "K90MTUq1ScexKHkvd3YL5yej52oAAAAAQUIPAAAAAAAExtk2Jgdpl7Eg9FkZffPv"
+      "alerted_kinds": [],
+      "count": 1,
+      "kind": "blocked",
+      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 403, 857 байт",
+      "since": "2026-11-01T23:07+02:00"
     }
   },
-  "failures": {},
   "keepalive": "2026-11",
   "targets": {
     "home": {
