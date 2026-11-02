@@ -7,35 +7,38 @@
       "incap_ses_1008_2224657": "HyCDPQrZ8lWzYKJtwiL9DT2n6GoAAAAAPlrIxjKBeBW5UyOxYu02RA==",
       "incap_ses_1011_2224657": "GKmIEZU+GlWw/oV9PMsHDmDD6GoAAAAA5f6VQNnYeHppzpEOXEvFkw==",
       "incap_ses_1322_2224657": "w5VWQfZzdDvw8Z7dtrBYEkCg6GoAAAAAf9gsH1rTievLNXXF+SnHFA==",
+      "incap_ses_197_2224657": "YMVha/E4ozs/e9kBy+K7AnfY6GoAAAAAu3elVQ71J0aOr0LhrRxxZA==",
       "incap_ses_2211_2224657": "HzylPvuvV2sVUmhz0gyvHlq86GoAAAAAC01L+eMQYQjU5dJzaKneJQ==",
       "incap_ses_354_2224657": "8x5NOoaTy25Ri9ca6KnpBGfK6GoAAAAAo/mlOv/FX12YhdOODzn9bA==",
       "incap_ses_395_2224657": "c/VGGL3eel3zzpxkxVJ7BW/R6GoAAAAAb0MbHPVjYPBNv9hFGEwxFg==",
       "incap_ses_699_2224657": "5GzxR4IZbkMJgDx+j1mzCUqu6GoAAAAAZ2EB/hhO6y5hFmOMAFF+Kw==",
-      "incap_wrt_373": "cdHoagAAAAApyOsvGgAI9QIQheqUjsEDGJ2lo9cGIAIo7qKj1wYwAVv2zMqFaplcmx3PzwsIK/0=",
+      "incap_wrt_373": "eNjoagAAAACIoIk2GgAI9QIQ1LDgj8EDGKSzo9cGIAIo9rCj1wYwAResISd3YdmNIjqkkgYkhgI=",
       "visid_incap_2224657": "8vvl2nZDSzCQBdexEdeuekCg6GoAAAAAQUIPAAAAAAC7TtkGxMl8st8hAR1o2OeW"
-    }
-  },
-  "failures": {
+    },
     "krem": {
-      "alerted_kinds": [],
-      "count": 1,
-      "kind": "error",
-      "message": "Timeout: Failed to perform, curl: (28) Operation timed out after 20001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
-      "since": "2026-11-02T20:07+02:00"
+      "Domain": "dtek-krem.com.ua",
+      "_csrf-dtek-krem": "2ece1f8893b5f9fae2fe5503a184b8472b30372b9fa053f1b1637d56936dd65fa%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22LT0AvuqAFoj2IF0N6tvi4pRj9Dz3b2j9%22%3B%7D",
+      "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
+      "dtek-krem": "06306t0dht4v2uq36tom4c7898",
+      "incap_ses_197_2398465": "5E32F9DeSEPnjNkBy+K7AorY6GoAAAAAqT1EdmXbygfpLKY0Q8uNwA==",
+      "incap_wrt_378": "jNjoagAAAABsb0sKGgAI+gIQgqbiyvkCGLizo9cGIAIo+bCj1wYwA3uBuCbO8M/ILGgRZsldAhA=",
+      "visid_incap_2398465": "62ba5xXASMGaDwGrT5NtnnnY6GoAAAAAQUIPAAAAAADU+i5r3cd2HBv+0uyFBInl"
     }
   },
+  "failures": {},
   "keepalive": "2026-11",
   "targets": {
     "home": {
       "days": {
-        "2026-11-02": "3ed2757976b5eb31"
+        "2026-11-02": "66e2c5a5f0e446f1",
+        "2026-11-03": "15713e90a2136f62"
       },
       "groups": [
         "GPV6.2"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "599f9d7c258ed0db",
+          "hash": "30f9569eed2deac0",
           "id": 3
         }
       }
