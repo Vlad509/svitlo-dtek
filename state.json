@@ -8,26 +8,18 @@
       "incap_ses_1025_2224657": "E3jzEoXYMD1ti4diMog5Dgd26GoAAAAA/NJAgHJPmDHUuJOnSU/Paw==",
       "incap_ses_363_2224657": "M7lLcCG0GThv82t09aIJBf9n6GoAAAAAAPZu57FUzshHP5z8oLhwgw==",
       "incap_ses_386_2224657": "KMlCRTPviy5+treqLllbBf9u6GoAAAAAgzG4EZt49QtYBLl0QYBvUQ==",
-      "incap_wrt_373": "CHboagAAAABoc7YCGgAI9QIQhfnQ+cADGLTuodcGIAIohOyh1wYwAZpom130Azw2IsZBhUg9K4o=",
+      "incap_ses_502_2224657": "J+dLQthLzWiimn1eGHf3Bgx96GoAAAAAHM3+K4x1d26S/p0JiFZLGg==",
+      "incap_wrt_373": "DX3oagAAAADAC9QgGgAI9QIQ6qSa+8ADGLn8odcGIAIoi/qh1wYwAeMTS/zxMXPKpqpezo9ZI6A=",
       "visid_incap_2224657": "sSS8Y/eJT+CfwimpgXbOWP5n6GoAAAAAQUIPAAAAAACDuknwn4y3pQz7fAAppOfe"
     },
     "krem": {
       "Domain": "dtek-krem.com.ua",
-      "_csrf-dtek-krem": "7fe6a8adbe976bd50ca952df22035288499f1c0f446a9895feeeedb19c3e3831a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22lbb6RYMoCpVno23WkD_h5h-y1aLMZpgl%22%3B%7D",
+      "_csrf-dtek-krem": "8fa511b75cf7af568c71c76b90e91cf2eff16e3e41e65af73ce75e999bd8dc46a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22PvVcWMDuIBzyZvQMeL3WbsyXKjBSgsKv%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-krem": "rscr6hnjfphlp88dds6uohbr9j",
-      "incap_ses_1007_2398465": "JYoAElXB/nL+8wo6TZX5DV5x6GoAAAAAxl7BjNt9sS8bzUfgoSzZEg==",
-      "incap_ses_1016_2398465": "y5twJTUVPg0qk0HBtY4ZDutS6GoAAAAAyONFSH0BRGPuj2N+Z3MGnA==",
-      "incap_ses_1025_2398465": "X1VQQVvkOHXspodiMog5Dgl26GoAAAAAMWs17fbfWs5sT/6j4pctNw==",
-      "incap_ses_1420_2398465": "v+qEYAqL5zVIEtv1Ktu0E9Q96GoAAAAAIRob1l/0NqTE9r0Jy4pNtA==",
-      "incap_ses_336_2398465": "8JUiQU8PQ3jsCrro+7apBM1E6GoAAAAAvrVy8OyTq1Wp9pqmN2EiGQ==",
-      "incap_ses_350_2398465": "qUANJhkU11x9gTI28nPbBOlZ6GoAAAAAaE8/wHc5ZCYs0J1XQXyUcA==",
-      "incap_ses_363_2398465": "mdmMZ52plG0t9mt09aIJBQJo6GoAAAAAFcyEWzytbyWUD+KiCSQ4SQ==",
-      "incap_ses_386_2398465": "RrdOXrzCxDoIubeqLllbBQFv6GoAAAAAMWe/NYzpxiAPvjeWyGCNdA==",
-      "incap_ses_396_2398465": "V9VZeOdz5HwY7VQIROB+Bd9L6GoAAAAAdWADKUz/mqd5b+mXZlwrmg==",
-      "incap_ses_957_2398465": "XfH8E414g1pZonxRfvJHDfpg6GoAAAAAG9LL7mCdUIEMecZrAcu0NA==",
-      "incap_wrt_378": "C3boagAAAADX3OgFGgAI+gIQ2629uvkCGLbuodcGIAIoiOyh1wYwAwvAwATtEeX2t/XUyvO9bFQ=",
-      "visid_incap_2398465": "vD91JmAvRO+ETQPwmtoSadM96GoAAAAAQUIPAAAAAABNDL2030i5f/8t2TqzUiRM"
+      "dtek-krem": "mhu42t44p91o4an3as5dk3fqcs",
+      "incap_ses_502_2398465": "lOhYS6jamlGzpH1eGHf3Bhd96GoAAAAAmu343oGORY5/kFhOW8J7cA==",
+      "incap_wrt_378": "GH3oagAAAADcrAMIGgAI+gIQ/vXeu/kCGMT8odcGIAIolvqh1wYwA/nPeo6ikP8OVxi1hKOuohc=",
+      "visid_incap_2398465": "QprT71dRQUCtvb3LBDNO/BZ96GoAAAAAQUIPAAAAAADYiVyY/2SiKMSKtUuWWmls"
     }
   },
   "failures": {},
@@ -49,14 +41,14 @@
     },
     "parents": {
       "days": {
-        "2026-11-02": "212469f2832e0780"
+        "2026-11-02": "1c1b446308b54f84"
       },
       "groups": [
         "GPV9.1"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "fa2d91587d8d1a0f",
+          "hash": "668319aeee335b08",
           "id": 5
         }
       }
