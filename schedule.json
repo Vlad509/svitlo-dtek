@@ -9,7 +9,7 @@
         },
         {
           "from": "16:00",
-          "to": "21:00",
+          "to": "24:00",
           "type": "off"
         }
       ],
@@ -35,13 +35,13 @@
         "no",
         "no",
         "no",
-        "yes",
-        "yes",
-        "yes"
+        "no",
+        "no",
+        "no"
       ]
     }
   },
-  "dtek_update": "02.11.2026 15:35",
+  "dtek_update": "02.11.2026 19:21",
   "group": "GPV6.2",
   "slot_minutes": 60,
   "target": "home"
