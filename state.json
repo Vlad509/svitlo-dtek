@@ -9,25 +9,19 @@
       "incap_ses_1018_2224657": "cQJ5Ma87RBL0UJhOt6kgDlvi52oAAAAA5RIWkpPW6DMUJq/TjRVcGQ==",
       "incap_ses_2214_2224657": "JU5HeivE/ykvBr+eTLW5HnX352oAAAAANk9esGs74vwJqNpYwrUApw==",
       "incap_ses_344_2224657": "IWtLJBKw5Cukl3EFYyLGBFzb52oAAAAADa++sUaJNY9XlMrD20xIgA==",
+      "incap_ses_396_2224657": "USjaQQZPygYS/bIHROB+BX/+52oAAAAA5KHSFfbFyijKYaQqudbXBg==",
       "incap_ses_958_2224657": "xpLEIi/0yFhHwYTv/H9LDW3w52oAAAAAe5tBD22YLSnAinZ99tPw6g==",
-      "incap_wrt_373": "dvfnagAAAAAn9C0VGgAI9QIQ9rqJ3cADGKLxn9cGIAIo9O6f1wYwAeyNi9TY8f6pdM7dcj+IA9A=",
+      "incap_wrt_373": "gP7nagAAAADPyg9rGgAI9QIQm+DY3sADGKz/n9cGIAIo/vyf1wYwAfZ3cV5r2Wv0j+siwMVMvvg=",
       "visid_incap_2224657": "568mv49zThWKH0AO1D5l91zb52oAAAAAQUIPAAAAAAAfaF/libTp+uXwFQ72QNbX"
     },
     "krem": {
       "Domain": "dtek-krem.com.ua",
-      "_csrf-dtek-krem": "f937e29e7d1f66a512ae0c07b825844f9c88c8aba77124b5cd2eb96e174ffd28a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%226ZUED5WnXk_CLH5QZ7bvpTziga55uimO%22%3B%7D",
+      "_csrf-dtek-krem": "431445f1bcf9d65d2973bf9705e2c8fb8e5b8464c52cb6aefd7bc178904355e2a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22Yzi590nypDXfZzmbFJ6iAAXJgMXU5kZQ%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-krem": "51kqennfq724qo2kfgh6v3tpef",
-      "incap_ses_1014_2398465": "F7WzcL4q10jP7w6IuHMSDmbp52oAAAAAUYqqTdzHdCYqah3vg8MW6w==",
-      "incap_ses_1016_2398465": "voF3F+a7OA+q1sq9tY4ZDtLd52oAAAAAYz9dmuV9IsFlXy7uiEY2Fw==",
-      "incap_ses_1018_2398465": "fVDVEwpK5T0abphOt6kgDl/i52oAAAAA3s3rX6inhpEO4zsv+IRxUg==",
-      "incap_ses_1416_2398465": "VLqMVHAipF2Bn11fN6WmE1rN52oAAAAAy1v4rWvn2bOJOobqqC15uA==",
-      "incap_ses_2214_2398465": "IpNDcNWNhnF0F7+eTLW5Hnb352oAAAAA/sUbPAee5NREs8BO7SNbMA==",
-      "incap_ses_421_2398465": "9HbldlNiznC9xGaPCLLXBW/w52oAAAAAfrENTHOoAKodSkvTaNK12w==",
-      "incap_ses_915_2398465": "F/C7V2s1wV3AO+1Mt7uyDF7b52oAAAAA3sH3Us8DnM0Ia39B6OTCgQ==",
-      "incap_ses_944_2398465": "P74/BHC6N3zWt5VFEsMZDU7U52oAAAAA1oXTe80dylRW9BL75xrECA==",
-      "incap_wrt_378": "d/fnagAAAAAho2cKGgAI+gIQm6PRo/kCGKPxn9cGIAIo9u6f1wYwAy2YLzqmuZZGQtyB+7ljvIA=",
-      "visid_incap_2398465": "YZa3nFt3Qh+xZBGoowe3rFnN52oAAAAAQUIPAAAAAADXPQOo0t+1QTlTXaYC9sui"
+      "dtek-krem": "p8buggk2pj3rfooeijggduo9q7",
+      "incap_ses_396_2398465": "G1dBaZPVUBl8GLMHROB+BYr+52oAAAAA1kbP5BtyCsirz2rdy5DzeA==",
+      "incap_wrt_378": "i/7nagAAAABSb/QPGgAI+gIQweL4pPkCGLf/n9cGIAIoif2f1wYwA1mhAF9lrmHhOOrbKpV89rw=",
+      "visid_incap_2398465": "DU9PpoVnTEinYl70Wiu0uIn+52oAAAAAQUIPAAAAAACqwEujgi7aoLho+VtkXgb0"
     }
   },
   "failures": {
@@ -35,7 +29,7 @@
       "alerted_kinds": [
         "address"
       ],
-      "count": 11,
+      "count": 12,
       "kind": "address",
       "message": "👵 Батьки: у графіку немає черг ['GPV9.1']; є: —",
       "since": "2026-11-02T00:07+02:00"
