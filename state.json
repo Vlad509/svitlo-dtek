@@ -4,17 +4,18 @@
       "_csrf-dtek-kem": "788082b63959e14150b4de6c6dfc780c59121c4313a81f7e5b7723e992ec53e6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22RsPthEdkRpOawPItML8muTEQHiyX5sGY%22%3B%7D",
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "amib1js8ucd9j0jdaqjha17n9v",
+      "incap_ses_1016_2224657": "lcKIF4787lfBejvUtY4ZDicx6moAAAAAzPYebXTiWoDhAoqtncL7QQ==",
       "incap_ses_2100_2224657": "rrb+a2HjHB3qO+dPnLMkHf8p6moAAAAAjDoZ3T0VQu+MsSZales0Bg==",
-      "incap_wrt_373": "ASrqagAAAACg72I5GgAI9QIQptfJ3MEDGK3WqNcGIAIo/tOo1wYwAb5UKsuj5jzKO/X85PDqHEg=",
+      "incap_wrt_373": "KTHqagAAAADUHBJ0GgAI9QIQvYyZ3sEDGNXkqNcGIAIopuKo1wYwAeMZ/6B0E2bPmSKUVu+2x5Y=",
       "visid_incap_2224657": "3hT6rUehQOOcGzyVGleyXP4p6moAAAAAQUIPAAAAAABvIwvN4i0/3evS5tqG55ZQ"
     }
   },
   "failures": {
     "krem": {
       "alerted_kinds": [],
-      "count": 1,
+      "count": 2,
       "kind": "blocked",
-      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 200, 911 байт",
+      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 200, 913 байт",
       "since": "2026-11-03T20:37+02:00"
     }
   },
