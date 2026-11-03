@@ -1,37 +1,21 @@
 {
   "cookies": {
     "kem": {
-      "_csrf-dtek-kem": "0315d48450fdb0104e633c7796d2379a0836adc63169270a2e9cea6a606eadb4a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%224OqCeMKYcmCUng-iabOhEJnc4AWOEuB_%22%3B%7D",
+      "_csrf-dtek-kem": "5e311123b9fb5f560228cb485b4b7f6a39733a09d883c82a2f0e5505cb61abb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22XD-eTfQ0NerLNOWznUxkDkHY5VKq6Z9b%22%3B%7D",
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-kem": "jg9s6sch63ucbgbh6dbm9f8i20",
-      "incap_ses_1017_2224657": "qCjqDTJtNxbduvnBNhwdDvVI6WoAAAAAKUZMDft1uOaif4QRNjQIHg==",
-      "incap_ses_348_2224657": "vzpRPyj92XJx5Cn75ljUBOs66WoAAAAAp4Iybythi2N0Al4QfTE6jA==",
-      "incap_ses_912_2224657": "HWcrWIcdA2wAU64RQBOoDOtB6WoAAAAAtia0sG8KyK4u1usK/rFpZw==",
-      "incap_wrt_373": "9kjpagAAAADMCSVkGgAI9QIQqae2qcEDGKKUpdcGIAIo9JGl1wYwAbuID8ukiFuAsNk3tyZHwgo=",
-      "visid_incap_2224657": "9Qf0GqsRQrag9Y8qXi3VGes66WoAAAAAQUIPAAAAAACryUlTbRV87D1X7bHYj/nb"
+      "dtek-kem": "0k9gc4livro7glth8qr3hqkps1",
+      "incap_ses_1323_2224657": "0bPHM0cuonGiftQwMz5cEgVQ6WoAAAAAIyvCbeSR959w21M2FeG8ag==",
+      "incap_wrt_373": "B1DpagAAAAAvyO14GgAI9QIQjOSGq8EDGLOipdcGIAIohKCl1wYwAZrxxMEciTPxsTfHvYWoFBM=",
+      "visid_incap_2224657": "ZTxcMM3+Rii80TWA4t9ZBwRQ6WoAAAAAQUIPAAAAAABUbNvseCuwQyi1thL1Ao5D"
     },
     "krem": {
       "Domain": "dtek-krem.com.ua",
-      "_csrf-dtek-krem": "2ece1f8893b5f9fae2fe5503a184b8472b30372b9fa053f1b1637d56936dd65fa%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22LT0AvuqAFoj2IF0N6tvi4pRj9Dz3b2j9%22%3B%7D",
+      "_csrf-dtek-krem": "1be28fe87e79726aa539b92207d9c981ea92516396ab42f9de3a45480a0843e6a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22PXqM0sN00Mt21GeT4I9FN1Ak7KxwEKR6%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-krem": "06306t0dht4v2uq36tom4c7898",
-      "incap_ses_1007_2398465": "gZyYI9hC0lQJqxVBTZX5Db8Q6WoAAAAAZqtVWJNxBM7AAXub68ykVw==",
-      "incap_ses_1010_2398465": "ZN5IHVqTSiO2v231vT0EDo7m6GoAAAAA6MSwvV26tbx6E3k6Xe/hiQ==",
-      "incap_ses_1015_2398465": "iVVrYrYlEBy5koMbNwEWDp776GoAAAAAqOlXCJRlfDIYRnf0ZAWpdw==",
-      "incap_ses_1017_2398465": "tzQBEGhjKCa30fnBNhwdDvdI6WoAAAAAbvWnS3BnlaITo+4d4RwLZw==",
-      "incap_ses_1022_2398465": "A6+DSIr/hCU0hqZ9tt8uDpLt6GoAAAAABAWusG7/Kk7YCzOjUsbyTg==",
-      "incap_ses_1023_2398465": "NPW4ANPa+QLkXw3MMm0yDuoz6WoAAAAAqIkyytK6hfRO1cukHmxCpg==",
-      "incap_ses_1024_2398465": "AYapPivZlQBmrMocr/o1Ds0l6WoAAAAAU6t6UJ3tiSR1Sp9pHke4XA==",
-      "incap_ses_102_2398465": "BxPMImZOrDwQYW7Wy2BqAakC6WoAAAAA9FuKFRoYo+pPxuGzV54DBg==",
-      "incap_ses_197_2398465": "5E32F9DeSEPnjNkBy+K7AorY6GoAAAAAqT1EdmXbygfpLKY0Q8uNwA==",
-      "incap_ses_348_2398465": "DAXkUvqzhXHT5Sn75ljUBO066WoAAAAA0LHAwRUiANFbsYZEGtZwwA==",
-      "incap_ses_351_2398465": "+POGXLdULCbEG5nQ4gDfBNge6WoAAAAAPLlushSMddNQNfO3ZmLBaw==",
-      "incap_ses_414_2398465": "itGBSpJFD3Ca5YSdK9O+BUEE6WoAAAAAKhH9BG1HYa5BLzmN37lfNg==",
-      "incap_ses_48_2398465": "tdTyTE6W/Q6CnHwwAIiqAN4s6WoAAAAA1sNu+saMJB7x9css6FpsRw==",
-      "incap_ses_912_2398465": "wOyWLu1+PBrBX64RQBOoDO5B6WoAAAAAyd8ifk0ZIiAvtcT2dNfUrA==",
-      "incap_ses_967_2398465": "SekTc4S4sAfqhwgUc3lrDa8J6WoAAAAAJv08f2t3sMsG5qQsv0BcqA==",
-      "incap_wrt_378": "+EjpagAAAAB5ftVbGgAI+gIQuoPx2vkCGKSUpdcGIAIo95Gl1wYwAy2SoDIN8MSRsUDfhF+TaLM=",
-      "visid_incap_2398465": "62ba5xXASMGaDwGrT5NtnnnY6GoAAAAAQUIPAAAAAADU+i5r3cd2HBv+0uyFBInl"
+      "dtek-krem": "cmk6gbirblfo7ur8uo73i739gq",
+      "incap_ses_1323_2398465": "GOa8JxEUh0lkgtQwMz5cEhBQ6WoAAAAAgTxwH2Lg6rLYiGBAezk+iw==",
+      "incap_wrt_378": "EVDpagAAAAB7ojwEGgAI+gIQ2N322/kCGL2ipdcGIAIoj6Cl1wYwA9a1la7+yaKUuqhmhF3mujM=",
+      "visid_incap_2398465": "zcgi3so7T3mo1wb4nOfv3Q9Q6WoAAAAAQUIPAAAAAACkuGb1LhVGi9AsaVMoGjOr"
     }
   },
   "failures": {},
