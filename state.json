@@ -7,21 +7,23 @@
       "incap_ses_1015_2224657": "9QIqGUP0sjzM2BEuNwEWDm5062oAAAAAG0uUEpRCPad8/yamOR/E7Q==",
       "incap_ses_1021_2224657": "+avvH1wRmUoeegklLFIrDmZt62oAAAAAak6Euy0wnWoDGIFF2piGnA==",
       "incap_ses_197_2224657": "z/1lH1HDOnJWFzkNy+K7Au5o62oAAAAAdrby2rRJPmV8GLEoA9JlGQ==",
+      "incap_ses_915_2224657": "P2oTFkMkcFDRJ9KUubuyDIWJ62oAAAAAiqSVhlVB++jc6TuQlh/ugw==",
       "incap_ses_92_2224657": "UsxuFx2E8w7EEsVKitlGAXV762oAAAAAqs9vtGxJOOAP92ElikpsXg==",
       "incap_ses_967_2224657": "vfVJGNh61DgodaYgc3lrDX2C62oAAAAAc08hU8yYEPwPBnfg+SXv1g==",
-      "incap_wrt_373": "foLragAAAAAfxph3GgAI9QIQ27fsqsIDGKqHrtcGIAIo/ISu1wYwAVSz1s5gOboy4hmtOCbKmT4=",
+      "incap_wrt_373": "h4nragAAAACy/9d7GgAI9QIQ5f23rMIDGLOVrtcGIAIohJOu1wYwAT1IDwcLYropO0Wq7CJyIBU=",
       "visid_incap_2224657": "QVruf5ckSyGipl9XNvFhd+1o62oAAAAAQUIPAAAAAABsDGMeQ2pY5RQ2srmfwSjv"
-    }
-  },
-  "failures": {
+    },
     "krem": {
-      "alerted_kinds": [],
-      "count": 1,
-      "kind": "blocked",
-      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 200, 904 байт",
-      "since": "2026-11-04T21:07+02:00"
+      "Domain": "dtek-krem.com.ua",
+      "_csrf-dtek-krem": "98ec36f91403908cd1ef1855c83a8f627317b8d1b1d9449631ace752782aabaaa%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%226L0v2VR6Sh2b3mJ4oy7Z0HE6JJKAgtOw%22%3B%7D",
+      "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
+      "dtek-krem": "380884i4j8mhtsuof3pp6ano99",
+      "incap_ses_915_2398465": "/BOGeyzsey0MNNKUubuyDIiJ62oAAAAAtunA+hQDnVMn23Q6Gs3oYw==",
+      "incap_wrt_378": "ionragAAAAAQFipaGgAI+gIQxsfkpfoCGLaVrtcGIAIoh5Ou1wYwA21P0scgboRTMafWpOLWy20=",
+      "visid_incap_2398465": "LZdghWwuQiiNODkngtuQIYeJ62oAAAAAQUIPAAAAAAAOJC/x4hjyHUskN5+9kjdm"
     }
   },
+  "failures": {},
   "keepalive": "2026-11",
   "targets": {
     "home": {
