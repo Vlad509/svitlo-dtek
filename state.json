@@ -1,26 +1,18 @@
 {
-  "cookies": {
-    "kem": {
-      "_csrf-dtek-kem": "76eaef10f475298fe9a79f49b03533441b5477eaf2acc96510dccb61c03481f0a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22hLE5eb70Zw4vUNNBlIr9NkLwMId0Hwrb%22%3B%7D",
-      "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-kem": "ugushniqna1fsdqvuh475vgrtc",
-      "incap_ses_1014_2224657": "VdIdZqpN3ReAj/2ruHMSDjZD62oAAAAANg/phvmHhqVXgzBt0f/cDw==",
-      "incap_ses_333_2224657": "Fh4pPawpCkowGNudkg6fBB4u62oAAAAADnATthyDDWODS4PgDlayOw==",
-      "incap_ses_397_2224657": "n2m0WyaH610OY4iVc22CBUJK62oAAAAAlGNY7kxiAKGT4HEFDzz5QQ==",
-      "incap_ses_461_2224657": "re/BM7hw6g59slv+z81lBhYn62oAAAAAwOR64NGzSIKBpihSt1D6OA==",
-      "incap_ses_579_2224657": "TyAmf8F6EQGGK/pDMgYJCElR62oAAAAAY7Xfouw52aKgpxQOeHJOMA==",
-      "incap_ses_641_2224657": "+hLDJSSZAwihU2+E2UrlCC4862oAAAAAcWAUQ03xm4F5PaPT0ruGFg==",
-      "incap_ses_71_2224657": "aggWYG8LxHFoEmH+YD78ACY162oAAAAA9zoafe2bR4veKvChBwLzNw==",
-      "incap_wrt_373": "SlHragAAAABlbKIBGgAI9QIQkZnZn8IDGPakrdcGIAIoyKKt1wYwAckCmjxFGn4ABWv1CMORlcg=",
-      "visid_incap_2224657": "U2vZleWfRemXvmPaxN/ysAQZ62oAAAAAQUIPAAAAAAApPvgeDuqtXUzigb0QfTK2"
-    }
-  },
+  "cookies": {},
   "failures": {
-    "krem": {
+    "kem": {
       "alerted_kinds": [],
       "count": 1,
       "kind": "blocked",
-      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 200, 906 байт",
+      "message": "WAF на https://www.dtek-kem.com.ua/ua/shutdowns: HTTP 403, 862 байт",
+      "since": "2026-11-04T18:07+02:00"
+    },
+    "krem": {
+      "alerted_kinds": [],
+      "count": 2,
+      "kind": "blocked",
+      "message": "WAF на https://www.dtek-krem.com.ua/ua/shutdowns: HTTP 403, 861 байт",
       "since": "2026-11-04T17:37+02:00"
     }
   },
