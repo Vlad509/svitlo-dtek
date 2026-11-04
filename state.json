@@ -17,12 +17,13 @@
       "_csrf-dtek-krem": "e9d8c498396d6aa129f89f1e88ebc0a6a1051e6cb157c3f198ae89754721f7c9a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%224WmMukksy-xMURppSrLsFOVp2WviELUA%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-krem": "pun0of9vm7pvl302ere92gotmc",
+      "incap_ses_1008_2398465": "r7YYPQVMHWL3zTCFwiL9DXqM6moAAAAAonjRBlg2Bm+wyRMMQa/0aQ==",
       "incap_ses_1323_2398465": "07DDQc36uAKmJ0ExMz5cEvFt6moAAAAAWANUxVXacppnd7K46sVmPg==",
       "incap_ses_188_2398465": "59WndA3aKADXNYknVembAlt+6moAAAAAm/voA6ccDsKbsFOTmZiflw==",
       "incap_ses_912_2398465": "X292K6mhqwwsvXhQQhOoDGGF6moAAAAAe9iiB+GNyRYctixfdq7f5w==",
       "incap_ses_961_2398465": "Vy1UelZxPS6WfQjpeChWDUlw6moAAAAAkp7oui/ctAGV7bogFqlIxA==",
       "incap_ses_967_2398465": "U3BEV+L8mkuoZY4bc3lrDVB36moAAAAAcr0patO4qhYkf2tiEtdD4w==",
-      "incap_wrt_378": "ZIXqagAAAABfBwkXGgAI+gIQ/q2WgfoCGJCNqtcGIAIo4Iqq1wYwA3K59RIeGHxNrb5xi+jiKSQ=",
+      "incap_wrt_378": "fozqagAAAABGQuMUGgAI+gIQtrKkgvoCGKebqtcGIAIo9piq1wYwAygbLk5sHpw0Wqt6PzQIEmI=",
       "visid_incap_2398465": "sdJ7NLWySTKYfTlBZEo9KPBt6moAAAAAQUIPAAAAAAAGFA+I6esPTH79UVQ1TLgT"
     }
   },
@@ -31,9 +32,9 @@
       "alerted_kinds": [
         "address"
       ],
-      "count": 8,
-      "kind": "address",
-      "message": "👵 Батьки: у графіку немає черг ['GPV9.1']; є: —",
+      "count": 1,
+      "kind": "error",
+      "message": "Timeout: Failed to perform, curl: (28) Connection timed out after 20000 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "since": "2026-11-04T00:07+02:00"
     }
   },
