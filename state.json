@@ -5,21 +5,18 @@
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "2tavpmb9amltu3bb16sqae7s90",
       "incap_ses_228_2224657": "xv/bBsMD+H7InX8hjAUqA6+l62oAAAAA7AO9fNnjRDcJNiMR7aesNg==",
-      "incap_wrt_373": "saXragAAAADNA7sEGgAI9QIQlaLrssIDGN3NrtcGIAIorsuu1wYwAWodgH4JqZjxY4WxsKi/ddU=",
+      "incap_ses_410_2224657": "TCUXUzrkvSimDXTUmZ2wBays62oAAAAAkTqtJkMFtK4nYChs2GrvCQ==",
+      "incap_wrt_373": "razragAAAABDaYUcGgAI9QIQk5e3tMIDGNnbrtcGIAIoq9mu1wYwATCUp5edl0Flnf/SRaS5BHU=",
       "visid_incap_2224657": "jU9l/lTlR8Gj2x99RTPkiq6l62oAAAAAQUIPAAAAAAAj++wqsMzzECwab3kVApmd"
     },
     "krem": {
       "Domain": "dtek-krem.com.ua",
-      "_csrf-dtek-krem": "98ec36f91403908cd1ef1855c83a8f627317b8d1b1d9449631ace752782aabaaa%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%226L0v2VR6Sh2b3mJ4oy7Z0HE6JJKAgtOw%22%3B%7D",
+      "_csrf-dtek-krem": "625d4528420ba06b061cf46a52a0f0a7c3efb2692af173482d29a9beb202691da%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22fW2B2UR3H7UQYQ2_KwF7T0LWxEmPjG0P%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-krem": "380884i4j8mhtsuof3pp6ano99",
-      "incap_ses_1017_2398465": "zpo9DBQegjDbdYnXNhwdDo+Q62oAAAAAgkmgR++Ojs9mHPIAFGo+ww==",
-      "incap_ses_176_2398465": "CTXYCoDihAQ2yEopZUdxAqee62oAAAAAGJRTIZ4U4cJC0PzcySA7Ng==",
-      "incap_ses_228_2398465": "YLcafkDQ3zx6o38hjAUqA7Kl62oAAAAAMN4f/+Ip7OHwpqBpZQpKZQ==",
-      "incap_ses_502_2398465": "HIMBAUw7KimAlPdiGHf3BpeX62oAAAAAYEp0O3aRXqqAP/eKtcDcIw==",
-      "incap_ses_915_2398465": "/BOGeyzsey0MNNKUubuyDIiJ62oAAAAAtunA+hQDnVMn23Q6Gs3oYw==",
-      "incap_wrt_378": "taXragAAAACDEQkbGgAI+gIQ5N2PqvoCGODNrtcGIAIoscuu1wYwA8XiT7K8p51NWGI23gxMwlU=",
-      "visid_incap_2398465": "LZdghWwuQiiNODkngtuQIYeJ62oAAAAAQUIPAAAAAAAOJC/x4hjyHUskN5+9kjdm"
+      "dtek-krem": "ml70nor92oj23g57u5qo0voqcf",
+      "incap_ses_410_2398465": "DDN/c3eVGDsaHnTUmZ2wBbas62oAAAAA5gtDljPTNmhrZmVpRC75Xw==",
+      "incap_wrt_378": "uKzragAAAACjNHVYGgAI+gIQzp+bq/oCGOTbrtcGIAIottmu1wYwA1dTt9m+82AUuqi+89Yg3G4=",
+      "visid_incap_2398465": "qrMLOOdBRfiJfPbciFYuibas62oAAAAAQUIPAAAAAABVdSppFKJVytBYrCvVDdFG"
     }
   },
   "failures": {},
@@ -27,7 +24,6 @@
   "targets": {
     "home": {
       "days": {
-        "2026-11-04": "a1a6cc0de7572869",
         "2026-11-05": "c623158b01015ea2"
       },
       "groups": [
@@ -35,14 +31,13 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "ab2a2b489ab66ae2",
+          "hash": "ee79f5ab54919cd4",
           "id": 3
         }
       }
     },
     "parents": {
       "days": {
-        "2026-11-04": "f185b754df688735",
         "2026-11-05": "637ff7df21ea748e"
       },
       "groups": [
@@ -50,7 +45,7 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "7f34951a60f8a958",
+          "hash": "a61e97b60ee900b4",
           "id": 5
         }
       }

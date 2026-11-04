@@ -1,50 +1,5 @@
 {
   "days": {
-    "2026-11-04": {
-      "intervals": [
-        {
-          "from": "00:00",
-          "to": "07:00",
-          "type": "off"
-        },
-        {
-          "from": "10:00",
-          "to": "17:30",
-          "type": "off"
-        },
-        {
-          "from": "20:30",
-          "to": "24:00",
-          "type": "off"
-        }
-      ],
-      "slots": [
-        "no",
-        "no",
-        "no",
-        "no",
-        "no",
-        "no",
-        "no",
-        "yes",
-        "yes",
-        "yes",
-        "no",
-        "no",
-        "no",
-        "no",
-        "no",
-        "no",
-        "no",
-        "first",
-        "yes",
-        "yes",
-        "second",
-        "no",
-        "no",
-        "no"
-      ]
-    },
     "2026-11-05": {
       "intervals": [
         {
