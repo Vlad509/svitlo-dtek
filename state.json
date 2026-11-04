@@ -10,13 +10,14 @@
       "incap_ses_188_2224657": "d82uGNb3g2GuJIknVembAlh+6moAAAAAwXCr5w+fczUhrdDtF1tGIQ==",
       "incap_ses_189_2224657": "3wnOK8Niv3cRGsyS2nafAm+T6moAAAAAVsiDn2KJUYgMm2PUhW7A/w==",
       "incap_ses_198_2224657": "bzmQKp8siywfW6pQXHC/Ap+96moAAAAA5f6GMM8F20kHALaiqk3Geg==",
+      "incap_ses_2214_2224657": "dg5fQqkREAn+YbW8TLW5HrHL6moAAAAAgmnN7fqcb0bYLuO5SJpXeA==",
       "incap_ses_396_2224657": "l1DTBqv8/UPgxesRROB+BafE6moAAAAA3AUogrFEGE2p3T5FUB6b3Q==",
       "incap_ses_685_2224657": "nqOqNWzfSWMPBGjWnZyBCZa26moAAAAAkz49BG8WfvlNsBmfsd5teA==",
       "incap_ses_699_2224657": "mUIpMFxRwiRHYvZ/j1mzCUdw6moAAAAAskCwFkRSmquv7ISfyqoaVw==",
       "incap_ses_912_2224657": "GfhmB7hEBinftOtQQhOoDH2h6moAAAAA1uybB4QKyOD5ex0keziNxw==",
       "incap_ses_967_2224657": "kRucFCtDzBw7UY4bc3lrDU136moAAAAAFJzwblqzQkwDhMluSjwB2A==",
       "incap_ses_970_2224657": "D5bMcB3IK3zlIttT+CF2DXSa6moAAAAAStmCyjt1RZfyYbcsgwamrg==",
-      "incap_wrt_373": "qMTqagAAAACdnboJGgAI9QIQwIvs/8EDGNSLq9cGIAIopomr1wYwAbYNeQx1rPKPK0BK2sDBZI8=",
+      "incap_wrt_373": "ssvqagAAAAAmXzwvGgAI9QIQ8dq6gcIDGN6Zq9cGIAIosJer1wYwAcvke79yUhwOGNgmSRugMxQ=",
       "visid_incap_2224657": "GoneTas8TuKYF6vMtk2Wy+Zt6moAAAAAQUIPAAAAAABxeJxG89X54+C7KHZAbRrI"
     },
     "krem": {
@@ -26,9 +27,10 @@
       "dtek-krem": "88ffhmf7u4b0kin7uvqe6fl837",
       "incap_ses_1011_2398465": "xVhoeS+cjQEYyQ+OPMsHDpWv6moAAAAAHgYUTQhPLWHaNS2uTM8mOw==",
       "incap_ses_198_2398465": "otlhF48pP3p4aapQXHC/AqO96moAAAAAZtvwXMu/ghBIZJ011UqcPA==",
+      "incap_ses_2214_2398465": "2knaDoMrR30Oc7W8TLW5HrPL6moAAAAAgx1pph4HwRc1iLs4nDaZWA==",
       "incap_ses_396_2398465": "yDkTW/uWzENTzesRROB+BarE6moAAAAAtyACZyhCYfZJmMjfCbcU4A==",
       "incap_ses_685_2398465": "FfoUNkyAYHX2BWjWnZyBCZi26moAAAAAdQ1DI/KSG1MVmNCk0tkQmw==",
-      "incap_wrt_378": "q8TqagAAAACVamoPGgAI+gIQsNKBi/oCGNeLq9cGIAIoqYmr1wYwA+NwZBUX3PAPI0yU9Aoyalk=",
+      "incap_wrt_378": "tMvqagAAAAA5jfY0GgAI+gIQwauOjPoCGOCZq9cGIAIosper1wYwA/A0JdctqY3cWsI1VqT7tYI=",
       "visid_incap_2398465": "PByhTvx7RwSiJZyRPiAxL5Sv6moAAAAAQUIPAAAAAACvhhzhbiIZxTV+tyfAyRbk"
     }
   },
@@ -37,7 +39,7 @@
       "alerted_kinds": [
         "address"
       ],
-      "count": 8,
+      "count": 9,
       "kind": "address",
       "message": "👵 Батьки: у графіку немає черг ['GPV9.1']; є: —",
       "since": "2026-11-04T00:07+02:00"
