@@ -10,7 +10,8 @@
       "incap_ses_699_2224657": "mUIpMFxRwiRHYvZ/j1mzCUdw6moAAAAAskCwFkRSmquv7ISfyqoaVw==",
       "incap_ses_912_2224657": "m2K7IZRxgAbcr3hQQhOoDF6F6moAAAAAWBuLlpa+D5GP9+Gt2YxXFg==",
       "incap_ses_967_2224657": "kRucFCtDzBw7UY4bc3lrDU136moAAAAAFJzwblqzQkwDhMluSjwB2A==",
-      "incap_wrt_373": "cJPqagAAAAA0U5ZXGgAI9QIQjqXL9MEDGJypqtcGIAIo7qaq1wYwATxEcg1lQH4by3b+APr0bu8=",
+      "incap_ses_970_2224657": "D5bMcB3IK3zlIttT+CF2DXSa6moAAAAAStmCyjt1RZfyYbcsgwamrg==",
+      "incap_wrt_373": "eprqagAAAABm35BBGgAI9QIQ26mX9sEDGKa3qtcGIAIo87Sq1wYwAVO4C8LrYFlJfVqM2ZmYg5c=",
       "visid_incap_2224657": "GoneTas8TuKYF6vMtk2Wy+Zt6moAAAAAQUIPAAAAAABxeJxG89X54+C7KHZAbRrI"
     },
     "krem": {
@@ -25,7 +26,8 @@
       "incap_ses_912_2398465": "X292K6mhqwwsvXhQQhOoDGGF6moAAAAAe9iiB+GNyRYctixfdq7f5w==",
       "incap_ses_961_2398465": "Vy1UelZxPS6WfQjpeChWDUlw6moAAAAAkp7oui/ctAGV7bogFqlIxA==",
       "incap_ses_967_2398465": "U3BEV+L8mkuoZY4bc3lrDVB36moAAAAAcr0patO4qhYkf2tiEtdD4w==",
-      "incap_wrt_378": "c5PqagAAAABu/oE2GgAI+gIQ3Piug/oCGJ+pqtcGIAIo8Kaq1wYwA3HLxvXljVxnZrqqWqvebVE=",
+      "incap_ses_970_2398465": "QG6NXVbFxA1IQdtT+CF2DXya6moAAAAAKZFec2iUvpNJxLCYEON5jA==",
+      "incap_wrt_378": "f5rqagAAAAC0RGJFGgAI+gIQga26hPoCGKu3qtcGIAIo+7Sq1wYwA/Z901Y3u4ECcly9IH3Ia8Q=",
       "visid_incap_2398465": "sdJ7NLWySTKYfTlBZEo9KPBt6moAAAAAQUIPAAAAAAAGFA+I6esPTH79UVQ1TLgT"
     }
   },
@@ -34,7 +36,7 @@
       "alerted_kinds": [
         "address"
       ],
-      "count": 1,
+      "count": 2,
       "kind": "address",
       "message": "👵 Батьки: у графіку немає черг ['GPV9.1']; є: —",
       "since": "2026-11-04T00:07+02:00"
