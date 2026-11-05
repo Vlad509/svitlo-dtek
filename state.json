@@ -12,7 +12,8 @@
       "incap_ses_48_2224657": "XvC7ClUVRwJvYuY1AIiqAHa87GoAAAAA2slZqZy/rSxn0G7EIz+lKQ==",
       "incap_ses_958_2224657": "jfkuOD2NaRA7+XBB/39LDdew7GoAAAAApsp47krWMGsDlMzYhi1puQ==",
       "incap_ses_959_2224657": "VR4bJikwfVSM6GHmfQ1PDeW+7GoAAAAAzrWU1Xc/rhTo4/Xd5CSP2A==",
-      "incap_wrt_373": "BtTsagAAAACCWYJoGgAI9QIQ6Jmx98IDGLKqs9cGIAIogqiz1wYwAbWpajuTLzmQeukWvM5bKbk=",
+      "incap_ses_970_2224657": "jNwYYS6gFHDpVVtc+CF2DQfb7GoAAAAAczeHPAwjXs10S/Jxzgw/Lg==",
+      "incap_wrt_373": "CNvsagAAAADZRs8jGgAI9QIQmK38+MIDGLS4s9cGIAIohraz1wYwAeOh6iHv2ikN71GgmaeeuFM=",
       "visid_incap_2224657": "smRdWEYOSZCyslxwrSbDyPWp7GoAAAAAQUIPAAAAAACBLS5k+i/W83Zj4w2fzKEn"
     },
     "krem": {
@@ -26,7 +27,8 @@
       "incap_ses_2212_2398465": "LRPyVfNkEQ5ENP+VU5qyHvfM7GoAAAAAKecSuxBc1nV31eM/6qQH7w==",
       "incap_ses_461_2398465": "zgA0SvNFujomZzRO0s1lBui+7GoAAAAAlBGS2fh9yjIvqg0LHdv6eg==",
       "incap_ses_48_2398465": "hwIcdZWavk9WZ+Y1AIiqAHm87GoAAAAAxoDl9bxJjfhNsynRyqrTfw==",
-      "incap_wrt_378": "CdTsagAAAAD0RNoHGgAI+gIQhemT2voCGLSqs9cGIAIohqiz1wYwA2Vkc0hmF0yeLUWXaJMphG8=",
+      "incap_ses_970_2398465": "1Kr/FBcpFnb7bFtc+CF2DQrb7GoAAAAAXCi4rNBF5iy2hxkfAnsVDQ==",
+      "incap_wrt_378": "DNvsagAAAABucvUsGgAI+gIQ+Mil2/oCGLi4s9cGIAIoibaz1wYwA+8wwlxOnYT88uuDCJXA1ic=",
       "visid_incap_2398465": "qYOTPZi+SGygrc81ARCqq+m37GoAAAAAQUIPAAAAAABXfBmjoeN48xNJaaourMlf"
     }
   },
@@ -43,21 +45,22 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "03b4a1dd6de4c912",
+          "hash": "5d81ba03e39d7f4d",
           "id": 3
         }
       }
     },
     "parents": {
       "days": {
-        "2026-11-05": "637ff7df21ea748e"
+        "2026-11-05": "637ff7df21ea748e",
+        "2026-11-06": "3f85b40414b5a55d"
       },
       "groups": [
         "GPV9.1"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "bdf7671c216e411a",
+          "hash": "a83d3150acd3ded8",
           "id": 5
         }
       }
