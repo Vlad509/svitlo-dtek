@@ -5,10 +5,11 @@
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-kem": "vbhmtbqqcep5h0i21udt2tm6a2",
       "incap_ses_1010_2224657": "eO1kSelNzkHXfGm7vz0EDhXp7GoAAAAAOZrEHhx3f+rnWH6sslcMhA==",
+      "incap_ses_397_2224657": "5eZ2cWDRpw7OpIagc22CBTL+7GoAAAAAXiMFECsx5Z+vG0p3NNYgbQ==",
       "incap_ses_441_2224657": "c4PwNTd0LAO2ReTS4b8eBhTi7GoAAAAAT7xtkD82s9V078SsLvjKRw==",
       "incap_ses_502_2224657": "+NY1VuFROgzU9WqyGnf3Bh3w7GoAAAAADI3fZCURxUW7UqJ49hFnXw==",
       "incap_ses_967_2224657": "hAjsUEcl5i6P90onc3lrDSf37GoAAAAA87Anado7+za03IxjpHoZqw==",
-      "incap_wrt_373": "KffsagAAAADwywZFGgAI9QIQkIex/8IDGNXws9cGIAIopu6z1wYwAfU3tkkgzeeKsHI1v8CAHK4=",
+      "incap_wrt_373": "NP7sagAAAAC2Q9ROGgAI9QIQ3dH+gMMDGOD+s9cGIAIosfyz1wYwARJS6n32laFJKTvsapa+5Nw=",
       "visid_incap_2224657": "fHByRczeQz629RaeYxBfnxPi7GoAAAAAQUIPAAAAAAB7u0dM8xtUEAC4h4fweuAl"
     },
     "krem": {
@@ -18,9 +19,10 @@
       "dtek-krem": "40t83n85opah5ak3oh6fl3cesv",
       "incap_ses_1010_2398465": "S1eRKAfm3Ccrqmm7vz0EDhnp7GoAAAAAz4be8Rc112iaY7hrZdavgg==",
       "incap_ses_354_2398465": "BFNwdVJQ/yGCp2ht6qnpBCn37GoAAAAAIcdkN80BimSxtpow7BIcFw==",
+      "incap_ses_397_2398465": "FXflEh/3uQvrwYagc22CBTX+7GoAAAAAocynN7mFecyXq5O0AIdtPw==",
       "incap_ses_441_2398465": "opjkVOaAnUy3TOTS4b8eBh7i7GoAAAAAk221t4antz6VKtB9+P9zpw==",
       "incap_ses_502_2398465": "z0kBMgnIS1fm+mqyGnf3BiDw7GoAAAAA/bwpvLv0V0H0BnypPom6Pg==",
-      "incap_wrt_378": "KvfsagAAAADvUts1GgAI+gIQ58Py3/oCGNbws9cGIAIoqO6z1wYwA0SaCueZ7C/EdL34ANby58U=",
+      "incap_wrt_378": "OP7sagAAAADKGqg8GgAI+gIQy4SG4foCGOP+s9cGIAIotPyz1wYwAzQU7niZqyEHuHUntY8Qv5M=",
       "visid_incap_2398465": "Ui4UmCfFRTil0+iq4uDWnh3i7GoAAAAAQUIPAAAAAAC3eYJC/nqrop3dcx5W1tmV"
     }
   },
@@ -29,7 +31,6 @@
   "targets": {
     "home": {
       "days": {
-        "2026-11-05": "0885809e7271224c",
         "2026-11-06": "51e0cf3677e045d3"
       },
       "groups": [
@@ -37,14 +38,13 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "5d81ba03e39d7f4d",
+          "hash": "4dbab0f822cf517a",
           "id": 3
         }
       }
     },
     "parents": {
       "days": {
-        "2026-11-05": "637ff7df21ea748e",
         "2026-11-06": "3f85b40414b5a55d"
       },
       "groups": [
@@ -52,7 +52,7 @@
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "a83d3150acd3ded8",
+          "hash": "9453b75a69d22646",
           "id": 5
         }
       }
