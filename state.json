@@ -6,11 +6,12 @@
       "dtek-kem": "7oe6n96inj0oeq6ebvri7o2k5v",
       "incap_ses_1814_2224657": "wwYUZZWS6DC54yE4dp8sGV0J7moAAAAAE9GV3VZezaX+Yx+SNaDgLQ==",
       "incap_ses_189_2224657": "O8umMnThtwdLePHX3HafAloC7moAAAAAajPUVZ2c4c4x+KSP++NRAw==",
+      "incap_ses_198_2224657": "cf/UNr6ih2/1bgCWXnC/AmcQ7moAAAAAacY3PvGbhgxe79DGYyGGIw==",
       "incap_ses_2110_2224657": "KzD5Uzw5BRC+v3hvdzpIHT7t7WoAAAAABwSzfLfAC1hlR9YQ7lofcA==",
       "incap_ses_227_2224657": "7BxeWfGYgirSqbyyD3gmA0777WoAAAAAJ8hRm5VzmDVHu1Tt+wwEow==",
       "incap_ses_640_2224657": "eLK+a4Nev2qd9ZEwXb3hCEb07WoAAAAAmAVIOSm15k8r4YowBw09Hg==",
       "incap_ses_71_2224657": "2FYUOAOZ/lPajgU7Yz78AAAF7moAAAAA80dg/ZgyECWtwFvXXFSUzg==",
-      "incap_wrt_373": "XgnuagAAAACvE2pAGgAI9QIQ+PDVvcMDGIqVuNcGIAIo3JK41wYwAaZTb4QbU6J9NHmfKWTx0VI=",
+      "incap_wrt_373": "ahDuagAAAABxWW5aGgAI9QIQv4ajv8MDGJajuNcGIAIo5qC41wYwAYvFtup+YkTvjbqm+wXLYYw=",
       "visid_incap_2224657": "Tn/XIsr+RtW8IK08UtVPE0Dm7WoAAAAAQUIPAAAAAACDIrDWlYjo7b+TMW46MXI1"
     },
     "krem": {
@@ -19,8 +20,9 @@
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-krem": "qb4u0vabmm12vmhp162hj0b5a8",
       "incap_ses_1814_2398465": "VY9bEbW+rwxF6iE4dp8sGV8J7moAAAAAKMuuX+UVHSrudtsKPlM/tw==",
+      "incap_ses_198_2398465": "u+sae7DLFRafigCWXnC/AmwQ7moAAAAAFR/Ol34fH3S/BPT2l7dNog==",
       "incap_ses_71_2398465": "LaJNF2AKf3+ooQU7Yz78AAsF7moAAAAAIoMdYrcD0t95TGTqfn7gOg==",
-      "incap_wrt_378": "YAnuagAAAAC/OTooGgAI+gIQiPLejPsCGIyVuNcGIAIo3pK41wYwA/5t3SRNsnZekr5s7FZt51I=",
+      "incap_wrt_378": "bhDuagAAAADLUh9xGgAI+gIQxd3xjfsCGJqjuNcGIAIo6qC41wYwA9Cf75eYAIrPkAJvv5wK8WI=",
       "visid_incap_2398465": "00YVcwgGT0mQwrWmQTxy0QkF7moAAAAAQUIPAAAAAAAXS7BqjKg683LmFvCP4yPr"
     }
   },
@@ -29,14 +31,15 @@
   "targets": {
     "home": {
       "days": {
-        "2026-11-06": "014df1699379e217"
+        "2026-11-06": "014df1699379e217",
+        "2026-11-07": "6f3fe1b2d6d96b80"
       },
       "groups": [
         "GPV6.2"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "c09f64aae4e3b003",
+          "hash": "34d3182bead1ae23",
           "id": 3
         }
       }

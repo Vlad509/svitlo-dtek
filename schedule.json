@@ -39,9 +39,59 @@
         "yes",
         "yes"
       ]
+    },
+    "2026-11-07": {
+      "intervals": [
+        {
+          "from": "01:00",
+          "to": "05:00",
+          "type": "off"
+        },
+        {
+          "from": "06:00",
+          "to": "08:30",
+          "type": "off"
+        },
+        {
+          "from": "11:30",
+          "to": "19:00",
+          "type": "off"
+        },
+        {
+          "from": "22:00",
+          "to": "24:00",
+          "type": "off"
+        }
+      ],
+      "slots": [
+        "yes",
+        "no",
+        "no",
+        "no",
+        "no",
+        "yes",
+        "no",
+        "no",
+        "first",
+        "yes",
+        "yes",
+        "second",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "no",
+        "yes",
+        "yes",
+        "yes",
+        "no",
+        "no"
+      ]
     }
   },
-  "dtek_update": "06.11.2026 15:09",
+  "dtek_update": "06.11.2026 19:28",
   "group": "GPV6.2",
   "slot_minutes": 60,
   "target": "home"
