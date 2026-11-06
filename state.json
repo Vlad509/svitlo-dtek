@@ -1,18 +1,9 @@
 {
   "cookies": {
     "kem": {
-      "_csrf-dtek-kem": "b1eb04072d30d5cc2e971688c91f9c4b9bc8782c7393c9df68af3d696f27a5e6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22X_1b-tuGqVHnZS2h0Q4NX9ZO8BeyXMYi%22%3B%7D",
-      "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-kem": "u859cbjt5b59qvvbpre95toh4q",
-      "incap_ses_1326_2224657": "1Ow8TFylgAOAxPy/s+ZmEh7R7WoAAAAAFEZKFwAomlWYqU/7Rdpljw==",
-      "incap_ses_2104_2224657": "9mVhe3n2mEeXf20umekyHQm17WoAAAAAzJVGcnQYoGcn5fy1/WeIpA==",
-      "incap_ses_2107_2224657": "7CxEV7gQL1UmPfRxEJI9HQi87WoAAAAA8ZHeS0d8TIQhjRUFFwqcuQ==",
-      "incap_ses_2214_2224657": "Hg/VPyHdfFAgomZtTrW5HiPY7WoAAAAAMbQIP7zSqakJwrB5I1mVUw==",
-      "incap_ses_414_2224657": "WlgubzxCNS7d/bnvLdO+BS/f7WoAAAAA1GpJzOR9xyVw47IPkkwPTA==",
-      "incap_ses_79_2224657": "yEN7WkQC7xFVDglae6oYARbK7WoAAAAAd00ROmK9trBiChsWfndq5g==",
-      "incap_ses_944_2224657": "kQS9aF1IhhrhsH6XFMMZDQ7D7WoAAAAA+pQRFBA5DlmoE3ijgQfh0g==",
-      "incap_wrt_373": "MN/tagAAAACg7LUyGgAI9QIQwMmRtMMDGNzAt9cGIAIorr631wYwAajhscWjs/d5mu5x6eXtJv4=",
-      "visid_incap_2224657": "Ls+MTK5iS8KZnK45O4NL2wi17WoAAAAAQUIPAAAAAAAsSFk2oZvZhYI5Lr519Fgv"
+      "incap_ses_227_2224657": "OczccKHp7jI6cJWyD3gmA0Dm7WoAAAAAWr77OohciGFTxgNtICsqzg==",
+      "incap_wrt_373": "QObtagAAAACltUV7GgAI9QIQvPLctcMDGOzOt9cGIAIowMy31wYwAZhZrCLsnqfmkBoXgXkMNk8=",
+      "visid_incap_2224657": "Tn/XIsr+RtW8IK08UtVPE0Dm7WoAAAAAQUIPAAAAAACDIrDWlYjo7b+TMW46MXI1"
     },
     "krem": {
       "Domain": "dtek-krem.com.ua",
@@ -21,12 +12,23 @@
       "dtek-krem": "0ik2mn2rsusve1345jnfs8cmmo",
       "incap_ses_1326_2398465": "cW7udTra4jkFyfy/s+ZmEijR7WoAAAAALbWER26v0VAbeaI1b7FOSw==",
       "incap_ses_2214_2398465": "47SKG1k4LTNZvGZtTrW5HiXY7WoAAAAA0n0Wo7aBlqnbFrJYSQ6RNg==",
+      "incap_ses_227_2398465": "NKmDIIyW9iSecpWyD3gmA0Lm7WoAAAAA3kp8QhCgGkks0vfoHuMEuQ==",
       "incap_ses_414_2398465": "MAmwJ0kP0zXBBLrvLdO+BTLf7WoAAAAA4uFlZvj7hF5fxnLwYFHv8Q==",
-      "incap_wrt_378": "NN/tagAAAABJtH1nGgAI+gIQj9bxhfsCGN/At9cGIAIosb631wYwA0hByzLDbICdWWzfP4xyZAI=",
+      "incap_wrt_378": "Q+btagAAAABr1FkZGgAI+gIQvuyDh/sCGO/Ot9cGIAIowcy31wYwA0bZ7hfnrHTKrHT7dC4DYEc=",
       "visid_incap_2398465": "ppRdM5skTxCn5TPpcatdhCjR7WoAAAAAQUIPAAAAAABJo2234m5wCsZU3OhdA+Xv"
     }
   },
-  "failures": {},
+  "failures": {
+    "kem": {
+      "alerted_kinds": [
+        "address"
+      ],
+      "count": 1,
+      "kind": "address",
+      "message": "👵 Батьки: HTTP 500, не JSON: 'An internal server error occurred.'",
+      "since": "2026-11-06T16:37+02:00"
+    }
+  },
   "keepalive": "2026-11",
   "targets": {
     "home": {
