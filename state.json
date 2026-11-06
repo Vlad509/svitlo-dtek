@@ -1,8 +1,12 @@
 {
   "cookies": {
     "kem": {
+      "_csrf-dtek-kem": "c715e828d924601bc2f6158da782ab7e10ec8e0fa12a72e057c578dbde7592dba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22BmtdYGhYiZJdGc8gFnLPsY7pf2YtxekR%22%3B%7D",
+      "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
+      "dtek-kem": "7oe6n96inj0oeq6ebvri7o2k5v",
+      "incap_ses_2110_2224657": "KzD5Uzw5BRC+v3hvdzpIHT7t7WoAAAAABwSzfLfAC1hlR9YQ7lofcA==",
       "incap_ses_227_2224657": "OczccKHp7jI6cJWyD3gmA0Dm7WoAAAAAWr77OohciGFTxgNtICsqzg==",
-      "incap_wrt_373": "QObtagAAAACltUV7GgAI9QIQvPLctcMDGOzOt9cGIAIowMy31wYwAZhZrCLsnqfmkBoXgXkMNk8=",
+      "incap_wrt_373": "P+3tagAAAADzgKAjGgAI9QIQ7LSot8MDGOvct9cGIAIovdq31wYwAQC6Kku9jtJ8GAYmcV++Lt8=",
       "visid_incap_2224657": "Tn/XIsr+RtW8IK08UtVPE0Dm7WoAAAAAQUIPAAAAAACDIrDWlYjo7b+TMW46MXI1"
     },
     "krem": {
@@ -11,24 +15,15 @@
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
       "dtek-krem": "0ik2mn2rsusve1345jnfs8cmmo",
       "incap_ses_1326_2398465": "cW7udTra4jkFyfy/s+ZmEijR7WoAAAAALbWER26v0VAbeaI1b7FOSw==",
+      "incap_ses_2110_2398465": "G6/PCqAD2hEhx3hvdzpIHULt7WoAAAAAnH+pPpexmBdOZX0byo5meA==",
       "incap_ses_2214_2398465": "47SKG1k4LTNZvGZtTrW5HiXY7WoAAAAA0n0Wo7aBlqnbFrJYSQ6RNg==",
       "incap_ses_227_2398465": "NKmDIIyW9iSecpWyD3gmA0Lm7WoAAAAA3kp8QhCgGkks0vfoHuMEuQ==",
       "incap_ses_414_2398465": "MAmwJ0kP0zXBBLrvLdO+BTLf7WoAAAAA4uFlZvj7hF5fxnLwYFHv8Q==",
-      "incap_wrt_378": "Q+btagAAAABr1FkZGgAI+gIQvuyDh/sCGO/Ot9cGIAIowcy31wYwA0bZ7hfnrHTKrHT7dC4DYEc=",
+      "incap_wrt_378": "RO3tagAAAABz4elDGgAI+gIQ1YaWiPsCGO/ct9cGIAIowNq31wYwA/bkXrWhhtY4LwLqq83mDPA=",
       "visid_incap_2398465": "ppRdM5skTxCn5TPpcatdhCjR7WoAAAAAQUIPAAAAAABJo2234m5wCsZU3OhdA+Xv"
     }
   },
-  "failures": {
-    "kem": {
-      "alerted_kinds": [
-        "address"
-      ],
-      "count": 1,
-      "kind": "address",
-      "message": "👵 Батьки: HTTP 500, не JSON: 'An internal server error occurred.'",
-      "since": "2026-11-06T16:37+02:00"
-    }
-  },
+  "failures": {},
   "keepalive": "2026-11",
   "targets": {
     "home": {
