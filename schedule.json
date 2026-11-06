@@ -44,11 +44,6 @@
       "intervals": [
         {
           "from": "01:00",
-          "to": "05:00",
-          "type": "off"
-        },
-        {
-          "from": "06:00",
           "to": "08:30",
           "type": "off"
         },
@@ -69,7 +64,7 @@
         "no",
         "no",
         "no",
-        "yes",
+        "no",
         "no",
         "no",
         "first",
@@ -91,7 +86,7 @@
       ]
     }
   },
-  "dtek_update": "06.11.2026 21:07",
+  "dtek_update": "06.11.2026 23:23",
   "group": "GPV6.2",
   "slot_minutes": 60,
   "target": "home"
