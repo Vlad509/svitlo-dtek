@@ -1,40 +1,21 @@
 {
   "cookies": {
     "kem": {
-      "_csrf-dtek-kem": "c715e828d924601bc2f6158da782ab7e10ec8e0fa12a72e057c578dbde7592dba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22BmtdYGhYiZJdGc8gFnLPsY7pf2YtxekR%22%3B%7D",
+      "_csrf-dtek-kem": "b616939c4c1abcdb34dfb81f43b6304475a5b41ed6697fd4a10f94eb4f24b979a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22Au_kfoMA_GHlyv8DNilB570B_aTR1N2x%22%3B%7D",
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-kem": "7oe6n96inj0oeq6ebvri7o2k5v",
-      "incap_ses_1008_2224657": "5/JKXcrrZg4RYODXxCL9DdVW7moAAAAAN+lQK3iND0fIRYQBTtOXOw==",
-      "incap_ses_100_2224657": "cqn+VsRsYTtQd32NzkVjAXYe7moAAAAAX1ouxisSlzknyJzaXM9hDA==",
-      "incap_ses_1022_2224657": "7FJnBLUwS3ocrtTeuN8uDstP7moAAAAAe1eS4WhRlbpB7pgKeEusOw==",
-      "incap_ses_1814_2224657": "wwYUZZWS6DC54yE4dp8sGV0J7moAAAAAE9GV3VZezaX+Yx+SNaDgLQ==",
-      "incap_ses_189_2224657": "0MUtPDxDQyaEczLZ3HafArY67moAAAAAb8s5Z6RvWbac7rvnktjDvw==",
-      "incap_ses_198_2224657": "cf/UNr6ih2/1bgCWXnC/AmcQ7moAAAAAacY3PvGbhgxe79DGYyGGIw==",
-      "incap_ses_2110_2224657": "KzD5Uzw5BRC+v3hvdzpIHT7t7WoAAAAABwSzfLfAC1hlR9YQ7lofcA==",
-      "incap_ses_227_2224657": "7BxeWfGYgirSqbyyD3gmA0777WoAAAAAJ8hRm5VzmDVHu1Tt+wwEow==",
-      "incap_ses_326_2224657": "YzVebIMR2yCw9d9eJTCGBMNI7moAAAAAbgVhAe7GkeJhMs5euCHltg==",
-      "incap_ses_341_2224657": "YB5gMz+srXKCNZL+Hnq7BChf7moAAAAAAC6SXwbqvpM8h2ria4PL2A==",
-      "incap_ses_414_2224657": "gf9wKLtRQzXm6PLwLdO+BaEl7moAAAAAWR4Gf52RE+d+maJfMW15sw==",
-      "incap_ses_640_2224657": "eLK+a4Nev2qd9ZEwXb3hCEb07WoAAAAAmAVIOSm15k8r4YowBw09Hg==",
-      "incap_ses_71_2224657": "2FYUOAOZ/lPajgU7Yz78AAAF7moAAAAA80dg/ZgyECWtwFvXXFSUzg==",
-      "incap_ses_915_2224657": "GBXZeLuHJT2oPdugubuyDKsz7moAAAAABF8rCN3nwiUGwK2ksgV25A==",
-      "incap_ses_961_2224657": "wD9uV5W3sWlesaoxeyhWDbxB7moAAAAAk7q97MQ0PaAtJCbGWlczdg==",
-      "incap_ses_967_2224657": "X6KSZS1KMDZ/ZBtjdXlrDdxd7moAAAAAWcdomZqTOuWlOl+QLRy9dw==",
-      "incap_ses_970_2224657": "3Qy3MDVbyVcCc/ef+iF2DaMs7moAAAAA3BSf5zdePbEBs0IEgA1lRw==",
-      "incap_wrt_373": "KV/uagAAAADiZxJuGgAI9QIQ+6mc0cMDGNXAudcGIAIop7651wYwAdpaB0+AwEeDa3faQ8FfsVs=",
-      "visid_incap_2224657": "Tn/XIsr+RtW8IK08UtVPE0Dm7WoAAAAAQUIPAAAAAACDIrDWlYjo7b+TMW46MXI1"
+      "dtek-kem": "1djph10uaba5sojurd0o41upq0",
+      "incap_ses_1322_2224657": "PTMCUPnq9X64X4MtubBYEu1k7moAAAAA92x928rkWXyUKXZSBMcC7Q==",
+      "incap_wrt_373": "7mTuagAAAAADk2hPGgAI9QIQoN7F0sMDGJrMudcGIAIo7Mm51wYwAUIqKd3BbmoEBdo1vx4jkx8=",
+      "visid_incap_2224657": "DU9Sx4GSS9G/W9FVJJ2DHOxk7moAAAAAQUIPAAAAAAAPz3d8ljyVLXxqsaEXULN0"
     },
     "krem": {
       "Domain": "dtek-krem.com.ua",
-      "_csrf-dtek-krem": "a09410fdc762d29da75155df58a26623c9b8edd5536ec38b6d8812d7121af4fba%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22FuGVuiAJkgsLrqn-BfRSs1Ft7lfHDYuK%22%3B%7D",
+      "_csrf-dtek-krem": "b0a19cf3be44997ff38180d84b35bd951b809e136b689ff139f50b3abd0d39b2a%3A2%3A%7Bi%3A0%3Bs%3A15%3A%22_csrf-dtek-krem%22%3Bi%3A1%3Bs%3A32%3A%22aYELWU1Bjr9HZGXH8anob3myOqXRuJCV%22%3B%7D",
       "_language": "3eb69d58ec89e92ef3dafa6c5ddfe948ae4ccc42f3f8fc9cd1b9568ed22f10a3a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-krem": "g4g9h685uet7fmpa0sn0md2g3p",
-      "incap_ses_1008_2398465": "JKquK/ypXh1je+DXxCL9DdhW7moAAAAAvDzhTlajSJWnOCUNbglx1w==",
-      "incap_ses_1022_2398465": "aIMDYs/3FnvSStXeuN8uDtlP7moAAAAAkhIXxGOCahqj4bNxlb+9qA==",
-      "incap_ses_333_2398465": "WJPlHLuskmIuzuvglA6fBOBd7moAAAAAxRQfY6ixtRSiFlC5Dr7wCA==",
-      "incap_ses_341_2398465": "1D0qN5yGDVRUR5L+Hnq7BCtf7moAAAAA1Y0C9/HZh+HljeZE8lG9jg==",
-      "incap_wrt_378": "LF/uagAAAABIfvJvGgAI+gIQprqymvsCGNjAudcGIAIoqr651wYwA4ca4dGEyQ0bQIfJpNlq1rc=",
-      "visid_incap_2398465": "k+cu6UhOQoK3rfdwJ8KLadhP7moAAAAAQUIPAAAAAAB863Rjh7qcbaBgs/Qqdwp3"
+      "dtek-krem": "mo9ckfa9h9c48pfc4flhdfklf1",
+      "incap_ses_1322_2398465": "QbtCQLNPOCDPZIMtubBYEvdk7moAAAAACD8dfT3QFxs3UNw0yabPUg==",
+      "incap_wrt_378": "+WTuagAAAACsYy5dGgAI+gIQ2rmsm/sCGKXMudcGIAIo9sm51wYwA0PZzC6dG9G/pFr6Vo6LSYQ=",
+      "visid_incap_2398465": "PiXjSwyFR4uXPp4j621WD/Zk7moAAAAAQUIPAAAAAAAOLp6GK9ZxVilagkvLaroG"
     }
   },
   "failures": {},
