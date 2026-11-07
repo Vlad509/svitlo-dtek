@@ -1,24 +1,12 @@
 {
   "cookies": {
     "kem": {
-      "_csrf-dtek-kem": "b616939c4c1abcdb34dfb81f43b6304475a5b41ed6697fd4a10f94eb4f24b979a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22Au_kfoMA_GHlyv8DNilB570B_aTR1N2x%22%3B%7D",
+      "_csrf-dtek-kem": "14710b0cc58495beae1870d4346ccdc8c6fb41ce2f3f85557b6fece834671187a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-dtek-kem%22%3Bi%3A1%3Bs%3A32%3A%22eSV8-qw0VSeCtQXqDuzp0txB82cExLW2%22%3B%7D",
       "_language": "1f011804d107a9f0f6fa36417ed49140e5bc2106c740e65666f3a94e857201cca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22uk%22%3B%7D",
-      "dtek-kem": "1djph10uaba5sojurd0o41upq0",
-      "incap_ses_1008_2224657": "spFzW9XVgiMRYgraxCL9DRCI7moAAAAABpgQzcZYlqobTPBPRjz4iA==",
-      "incap_ses_100_2224657": "WAVAAnuHi0uppziQzkVjASOd7moAAAAAf4lspTfXtPTcAWZLo+d9Tw==",
-      "incap_ses_1010_2224657": "QedGFowCRxvLOZ/Mvz0EDjur7moAAAAAgX0vTgO8igTPlss26tIWUg==",
-      "incap_ses_1014_2224657": "RfG+SvAv8VqzgxVjunMSDuxr7moAAAAAbfeJ5zMkvzbyDVF/+2fqQA==",
-      "incap_ses_1020_2224657": "K2hbCPDSMxsBEVdMucQnDvl57moAAAAAo+hym0TK29zLHaUMrRVN0g==",
-      "incap_ses_1322_2224657": "PTMCUPnq9X64X4MtubBYEu1k7moAAAAA92x928rkWXyUKXZSBMcC7Q==",
-      "incap_ses_187_2224657": "rh61RENfyD5M4YSL2FuYAka57moAAAAAubENCpe+fO79cBOypE0prw==",
-      "incap_ses_198_2224657": "OvpGe5wpB2Cpl7SZXnC/Ajyy7moAAAAAgHJl0ZV6KqasykvkCyNiwA==",
-      "incap_ses_2106_2224657": "3/PJcpEPl3zBv2Z7jwQ6HR2W7moAAAAAyFEiJzuIkAuGRrCUCGQ7aA==",
-      "incap_ses_640_2224657": "yglGQ22172qSk2IxXb3hCCuk7moAAAAAmN4z1/r0n1HRza/weSsnMw==",
-      "incap_ses_731_2224657": "we3LI/PYgji3/rRvZgklChiP7moAAAAAIKts10FDN03hKll3MLkJQg==",
-      "incap_ses_944_2224657": "ogQ7MBzyRiFpCtCcFMMZDce/7moAAAAAXcAwgawD/yuL0xlHQDIUmw==",
-      "incap_ses_957_2224657": "oYj3b5Rw4hfgNdhufvJHDQSB7moAAAAADlvL97gebOBEu3ANOBRB6A==",
-      "incap_wrt_373": "yL/uagAAAACdRNJBGgAI9QIQqJOl58MDGPSBu9cGIAIoxv+61wYwAc41vU/5pebtL1HE8jXoGxk=",
-      "visid_incap_2224657": "DU9Sx4GSS9G/W9FVJJ2DHOxk7moAAAAAQUIPAAAAAAAPz3d8ljyVLXxqsaEXULN0"
+      "dtek-kem": "012uhv672dlu6j907mo7hs1un0",
+      "incap_ses_1010_2224657": "eH+bWrPBejyxpCLNvz0EDlPA7moAAAAAo3P75P1am3xGwu5AwZ8ESQ==",
+      "incap_wrt_373": "VMDuagAAAABehLx2GgAI9QIQ+4m158MDGICDu9cGIAIo0oC71wYwATBi8FDQLQNOzkn8/ftf4Sg=",
+      "visid_incap_2224657": "qIysqOEDQ32XPFL479RBFFLA7moAAAAAQUIPAAAAAAChTWU3sYSFr+grTK/DzWbl"
     },
     "krem": {
       "Domain": "dtek-krem.com.ua",
@@ -27,7 +15,7 @@
       "dtek-krem": "mo9ckfa9h9c48pfc4flhdfklf1",
       "incap_ses_1008_2398465": "I3yLNyeMDyroeAraxCL9DRKI7moAAAAATt2upuKEJ5UCXRKKP0fzOQ==",
       "incap_ses_100_2398465": "Os3EE87xmxKnsjiQzkVjASad7moAAAAAu7H9Kf+wBGgdFn0/it4vzg==",
-      "incap_ses_1010_2398465": "105QFeyoyU4/R5/Mvz0EDj2r7moAAAAAKFIGBp3j+Cjn6m7+J2jEoA==",
+      "incap_ses_1010_2398465": "GwgnJQ17gTyAsyLNvz0EDlXA7moAAAAA+f7/eUSkoJvJnljwwvK38A==",
       "incap_ses_1014_2398465": "F7XmA6zc9XNFohVjunMSDu5r7moAAAAAsd2sXw5KI+T+N27YS6DUkw==",
       "incap_ses_1020_2398465": "R88iWxS0ZkcxJ1dMucQnDvt57moAAAAAF4FgfYpuuPFlmYA3zBP+RA==",
       "incap_ses_1322_2398465": "QbtCQLNPOCDPZIMtubBYEvdk7moAAAAACD8dfT3QFxs3UNw0yabPUg==",
@@ -38,7 +26,7 @@
       "incap_ses_640_2398465": "Iv1nBXDoNH8ulWIxXb3hCC2k7moAAAAAKaQm60Oxf3KFO6mG3hLfaA==",
       "incap_ses_731_2398465": "JiSvTvibJnQ7A7VvZgklChqP7moAAAAAT+ecgNyutokwd5/HFCsvAQ==",
       "incap_ses_957_2398465": "FH1xORfft3alQNhufvJHDQaB7moAAAAAtVJ1437i8Ywn7D+BsffU6w==",
-      "incap_wrt_378": "yr/uagAAAADiDVV/GgAI+gIQmJukqvsCGPaBu9cGIAIoyP+61wYwA4YTxE4kLga/HnbyU42iT88=",
+      "incap_wrt_378": "V8DuagAAAABvMeNEGgAI+gIQ+82vqvsCGIODu9cGIAIo1YC71wYwA7U8Gd+gD5bmfO5F5yaLL68=",
       "visid_incap_2398465": "PiXjSwyFR4uXPp4j621WD/Zk7moAAAAAQUIPAAAAAAAOLp6GK9ZxVilagkvLaroG"
     }
   },
