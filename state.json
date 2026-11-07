@@ -15,7 +15,8 @@
       "incap_ses_47_2224657": "1SK/PmgkNi+H/VRyiPqmAJ8G72oAAAAAI3W2Acq+y0/Pfn6KjMlhcg==",
       "incap_ses_944_2224657": "vsUZNbk4pE7vOmKdFMMZDYz47moAAAAAJSPL4tVcQBeU+h9+EFWcRw==",
       "incap_ses_959_2224657": "zR5vTys0aSWPT3TxfQ1PDZL/7moAAAAAv9P84yGraYlv6J8QGLQzCQ==",
-      "incap_wrt_373": "pA3vagAAAAAC2sZRGgAI9QIQntmC+cMDGNCdvNcGIAIoo5u81wYwAVBpBLHSsitd37PS7gT6R4k=",
+      "incap_ses_970_2224657": "cg1MDgiEMT1xr06j+iF2Da0U72oAAAAAG38sMNZczILdbOu7fu5shg==",
+      "incap_wrt_373": "vhTvagAAAAAWieweGgAI9QIQ+c/Q+sMDGOqrvNcGIAIoqqm81wYwAUUCCcWxaGBgOstYUfk0xo4=",
       "visid_incap_2224657": "bQlGvnP9SEGoMXMB41l+813H7moAAAAAQUIPAAAAAAAQhuRrVYaqABxfSgb01AVT"
     },
     "krem": {
@@ -40,11 +41,12 @@
       "incap_ses_413_2398465": "lmnUH27DBFFNzzP6rEW7BYHq7moAAAAA+IzHXRFUkqxYmmudF75KQA==",
       "incap_ses_47_2398465": "duc9aMOPKGj5AFVyiPqmAKEG72oAAAAA6U/QQYxARoR21BvadbdGSQ==",
       "incap_ses_640_2398465": "Iv1nBXDoNH8ulWIxXb3hCC2k7moAAAAAKaQm60Oxf3KFO6mG3hLfaA==",
+      "incap_ses_685_2398465": "U0y9ZB/fESaCBp4ooJyBCcAU72oAAAAAl4ROXrDBGujnsoXRWSPkDw==",
       "incap_ses_731_2398465": "JiSvTvibJnQ7A7VvZgklChqP7moAAAAAT+ecgNyutokwd5/HFCsvAQ==",
       "incap_ses_957_2398465": "FH1xORfft3alQNhufvJHDQaB7moAAAAAtVJ1437i8Ywn7D+BsffU6w==",
       "incap_ses_959_2398465": "xu+wClU3JUbTU3TxfQ1PDZT/7moAAAAAGBk5TC1Ob2LiOzZUwNVw0g==",
       "incap_ses_967_2398465": "06fDbHSD5V+U4yRldXlrDVzO7moAAAAAD46BdxJbg+te2zTrIIECEA==",
-      "incap_wrt_378": "pg3vagAAAABq7j0FGgAI+gIQ0aSCt/sCGNKdvNcGIAIopJu81wYwA6JDOcKwIFvQONa6+x8EDlM=",
+      "incap_wrt_378": "wRTvagAAAACwgzsrGgAI+gIQ1JWYuPsCGO2rvNcGIAIov6m81wYwAymosp4UKe3qpX3rlW7Uhps=",
       "visid_incap_2398465": "PiXjSwyFR4uXPp4j621WD/Zk7moAAAAAQUIPAAAAAAAOLp6GK9ZxVilagkvLaroG"
     }
   },
@@ -67,14 +69,14 @@
     },
     "parents": {
       "days": {
-        "2026-11-07": "936ed27cf1336846"
+        "2026-11-07": "b7a919fb61bbcc80"
       },
       "groups": [
         "GPV9.1"
       ],
       "pins": {
         "-1004425079130": {
-          "hash": "20b76e2d1b6837c6",
+          "hash": "ff070ec503fc53e1",
           "id": 5
         }
       }
